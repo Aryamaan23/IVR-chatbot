@@ -11,23 +11,35 @@ intents:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+    - text: "Hey! How are you?"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
+    - text: "Here is something to cheer you up:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+    - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great, carry on!"
+    - text: "Great, carry on!"
 
   utter_goodbye:
-  - text: "Bye"
+    - text: "Bye"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+    - text: "I am a bot, powered by Rasa."
+
+  utter_faq/ask_main_brands:
+    - text: "Our diverse portfolio of well over 400 beer brands includes global brands Budweiser®, Corona® and Stella Artois®; multi-country brands Beck’s®, Castle®, Castle Lite®, Leffe® and Hoegaarden®; and local champions such as Aguila®, Antarctica®, Bud Light®, Brahma®, Cass®, Chernigivske®, Cristal®, Harbin®, Jupiler®, Klinskoye®, Michelob Ultra®, Modelo Especial®, Quilmes®, Victoria®, Sedrin®, Sibirskaya Korona®, and Skol®."
+
+  utter_faq/ask_reponsible_drinking:
+    - text: "As the leading global brewer, we brew our beers with quality and care, to be enjoyed responsibly by consumers of legal drinking age. As part of our Dream to bring people together for a better world, we are also deeply committed to marketing and promoting our beers in a responsible way."
+
+  utter_faq/ask_operate:
+    - text: "We have operations in more than 50 countries worldwide and a presence in virtually every major beer market. We are organized in 9 geographical Zones to maximize growth opportunities. We benefit from a geographically diversified global platform. The stability and strength of developed markets balances the growth opportunities of developing markets. We have a strong presence in key emerging regions with strong growth prospects such as Asia, Central and South America, and Africa."
+
+  utter_faq/ask_job:
+    - text: "Please visit the careers section https://www.ab-inbev.com/careers/ of our website for further information on job opportunities."
 
 session_config:
   session_expiration_time: 60
