@@ -15,3 +15,19 @@ rules:
     steps:
       - intent: faq
       - action: utter_faq
+
+  - rule: activate search products
+    steps:
+      - intent: search_products
+      - action: search_form
+      - active_loop: search_form
+
+  - rule: submit search products
+    condition:
+      - active_loop: search_form
+    steps:
+      - action: search_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_search_submit

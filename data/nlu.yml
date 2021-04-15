@@ -117,3 +117,18 @@ nlu:
       - job openings in abinbev?
       - apply for the job in abinbev?
       - WHERE CAN I APPLY FOR A JOB AT AB INBEV?
+
+  - intent: give_time
+    examples: |
+      - can you tell what time is?
+      - please give me the time?
+      - time now
+      - current time?
+      - what's the time here?
+
+  - intent: search_products
+    examples: |
+      - seach about this beer
+      - tell about this product
+      - give some information about this product
+      - brief me about this product

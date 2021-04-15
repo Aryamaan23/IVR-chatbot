@@ -8,6 +8,21 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - give_time
+  - search_products
+
+forms:
+  search_form:
+    product_name:
+      - type: from_text
+
+slots:
+  product_name:
+    type: text
+
+actions:
+  - action_show_time
+  - action_search_submit
 
 responses:
   utter_greet:
@@ -40,6 +55,12 @@ responses:
 
   utter_faq/ask_job:
     - text: "Please visit the careers section https://www.ab-inbev.com/careers/ of our website for further information on job opportunities."
+
+  utter_ask_product_name:
+    - text: "Enter the product name you want to search."
+
+  # utter_search_submit:
+  #   - text: "So here is your product {product_name}"
 
 session_config:
   session_expiration_time: 60
