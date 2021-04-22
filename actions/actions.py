@@ -8,6 +8,7 @@
 # This is a simple example for a custom action which utters "Hello World!"
 import datetime as dt 
 from typing import Any, Text, Dict, List
+from difflib import get_close_matches
 
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
@@ -76,9 +77,15 @@ class ActionSearch(Action):
         value = tracker.get_slot("search_prod_value")
 
         if choice == "1":
+            pr = []
             for p in products:
-                if p["name"] == value:
+                pr.append(p["name"])
+            nearest = get_close_matches(value, pr)
+            
+            for p in products:
+                if p["name"] == nearest[0]:
                     dispatcher.utter_message(text=f"{p}")
+                    break
 
         elif choice == "2":
             pr = []
