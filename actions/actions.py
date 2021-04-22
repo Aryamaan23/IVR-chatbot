@@ -151,6 +151,11 @@ class ActionPaymentStatus(Action):
                 res = o
                 break
         
+        if res == "item not found!":
+            dispatcher.utter_message(text=f"sorry item not found")
+            return [AllSlotsReset()]
+
+        
         ID = res["id"]
         status = res["payment_status"]
         dat = res["time"]

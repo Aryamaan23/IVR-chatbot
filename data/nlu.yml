@@ -148,3 +148,11 @@ nlu:
       - I am open for collaboration
       - I want to give my services to abinbev
       - let's do buisiness together
+
+  - intent: job_opportunity
+    examples: |
+      - Job opportunity
+      - I want to work at abinbev
+      - any work opportunity at abinbev
+      - i want a job at abinbev
+      - open for work at abinbev

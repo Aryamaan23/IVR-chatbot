@@ -81,6 +81,9 @@ responses:
   utter_collab:
     - text: "We are always open for collaborations, you can contact us here collab@abinbev.com"
 
+  utter_job_opportunity:
+    - text: "Thank you for showing intrest in abinbev. Visit our carreers portal at https://www.ab-inbev.com/careers/"
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
