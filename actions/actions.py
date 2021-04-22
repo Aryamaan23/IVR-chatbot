@@ -36,24 +36,79 @@ class ActionSearch(Action):
         tracker: Tracker,
         domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        product_name = tracker.get_slot("product_name")
-        dispatcher.utter_message(text=f"Good bro {product_name}")
+        products = [
+            {
+                "name": "abc",
+                "price": 556,
+                "alchohal_content": 10
+            },
+            {
+                "name": "def",
+                "price": 224,
+                "alchohal_content": 100
+            },
+            {
+                "name": "aryamaan",
+                "price": 12135,
+                "alchohal_content": 98
+            },
+            {
+                "name": "ankit",
+                "price": 5789,
+                "alchohal_content": 5
+            },
+            {
+                "name": "yo",
+                "price": 7898,
+                "alchohal_content": 50
+            },
+            {
+                "name": "brio",
+                "price": 68,
+                "alchohal_content": 67
+            }
+        ]
 
-        return []
+        def closest(lst, K):
+            return lst[min(range(len(lst)), key = lambda i: abs(lst[i]-K))]
+
+        choice = tracker.get_slot("search_prod_choice")
+        value = tracker.get_slot("search_prod_value")
+
+        if choice == "1":
+            for p in products:
+                if p["name"] == value:
+                    dispatcher.utter_message(text=f"{p}")
+
+        elif choice == "2":
+            pr = []
+            for p in products:
+                pr.append(p["price"])
+            nearest = closest(pr, int(value))
+            for p in products:
+                if p["price"] == nearest:
+                    dispatcher.utter_message(text=f"{p} {nearest}")
+                    break
+                    
+        elif choice == "3":
+            pr = []
+            for p in products:
+                pr.append(p["alchohal_content"])
+            nearest = closest(pr, int(value))
+            for p in products:
+                if p["alchohal_content"] == nearest:
+                    dispatcher.utter_message(text=f"{p} {nearest}")
+                    break
+
+        else:
+            dispatcher.utter_message(text=f"sorry product not found!")
+
+        return [AllSlotsReset()]
 
 
 class ActionPaymentStatus(Action):
     def name(self) -> Text:
         return "action_payment_status"
-    
-   
-
-    def search(id):
-        for o in orders:
-            if o['id'] == id:
-                return o
-            else:
-                return "item not found!"
     
     def run(self, dispatcher: CollectingDispatcher,
         tracker: Tracker,
@@ -98,5 +153,5 @@ class ActionPaymentStatus(Action):
             amount = "You have paid ₹" + res["amount"] + " at " + str(dat)
 
         dispatcher.utter_message(text=f"Payment Status for order Id {ID} is {status}. {amount}")
-        
+
         return [AllSlotsReset()]

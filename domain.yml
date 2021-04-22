@@ -15,7 +15,9 @@ intents:
 
 forms:
   search_form:
-    product_name:
+    search_prod_choice: # 1,2,3 for name, price and alchohal content
+      - type: from_text
+    search_prod_value:
       - type: from_text
 
   payment_form:
@@ -23,7 +25,9 @@ forms:
       - type: from_text
 
 slots:
-  product_name:
+  search_prod_choice:
+    type: text
+  search_prod_value:
     type: text
   order_id:
     type: text
@@ -65,8 +69,11 @@ responses:
   utter_faq/ask_job:
     - text: "Please visit the careers section https://www.ab-inbev.com/careers/ of our website for further information on job opportunities."
 
-  utter_ask_product_name:
-    - text: "Enter the product name you want to search."
+  utter_ask_search_prod_choice:
+    - text: "Enter your choice: \n1 search via name \n2 search via price \n3search via alchohal content"
+
+  utter_ask_search_prod_value:
+    - text: "Enter the value for the above choice"
 
   utter_ask_order_id:
     - text: "Enter the order ID of the product"
