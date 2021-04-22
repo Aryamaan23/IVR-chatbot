@@ -31,3 +31,19 @@ rules:
       - slot_was_set:
           - requested_slot: null
       - action: action_search_submit
+
+  - rule: activate payment status
+    steps:
+      - intent: payment_status
+      - action: payment_form
+      - active_loop: payment_form
+
+  - rule: submit payment status
+    condition:
+      - active_loop: payment_form
+    steps:
+      - action: payment_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_payment_status

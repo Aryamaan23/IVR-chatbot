@@ -128,7 +128,15 @@ nlu:
 
   - intent: search_products
     examples: |
-      - seach about this beer
+      - search about this beer
       - tell about this product
       - give some information about this product
       - brief me about this product
+
+  - intent: payment_status
+    examples: |
+      - Payment status
+      - tell me about the payment status
+      - what is the status of my order
+      - payment done with the order id
+      - have I paid for the product

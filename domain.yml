@@ -10,19 +10,27 @@ intents:
   - bot_challenge
   - give_time
   - search_products
+  - payment_status
 
 forms:
   search_form:
     product_name:
       - type: from_text
 
+  payment_form:
+    order_id:
+      - type: from_text
+
 slots:
   product_name:
+    type: text
+  order_id:
     type: text
 
 actions:
   - action_show_time
   - action_search_submit
+  - action_payment_status
 
 responses:
   utter_greet:
@@ -59,8 +67,8 @@ responses:
   utter_ask_product_name:
     - text: "Enter the product name you want to search."
 
-  # utter_search_submit:
-  #   - text: "So here is your product {product_name}"
+  utter_ask_order_id:
+    - text: "Enter the order ID of the product"
 
 session_config:
   session_expiration_time: 60
