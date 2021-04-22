@@ -140,3 +140,11 @@ nlu:
       - what is the status of my order
       - payment done with the order id
       - have I paid for the product
+
+  - intent: collab
+    examples: |
+      - I want to collaborate with abinbev
+      - Let's expand buisiness together
+      - I am open for collaboration
+      - I want to give my services to abinbev
+      - let's do buisiness together

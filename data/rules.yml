@@ -47,3 +47,8 @@ rules:
       - slot_was_set:
           - requested_slot: null
       - action: action_payment_status
+
+  - rule: collaboration with abinbev
+    steps:
+      - intent: collab
+      - action: utter_collab

@@ -99,5 +99,4 @@ class ActionPaymentStatus(Action):
 
         dispatcher.utter_message(text=f"Payment Status for order Id {ID} is {status}. {amount}")
         
-
         return [AllSlotsReset()]

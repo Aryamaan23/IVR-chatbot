@@ -11,6 +11,7 @@ intents:
   - give_time
   - search_products
   - payment_status
+  - collab
 
 forms:
   search_form:
@@ -69,6 +70,9 @@ responses:
 
   utter_ask_order_id:
     - text: "Enter the order ID of the product"
+
+  utter_collab:
+    - text: "We are always open for collaborations, you can contact us here collab@abinbev.com"
 
 session_config:
   session_expiration_time: 60
