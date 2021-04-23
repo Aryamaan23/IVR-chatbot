@@ -24,6 +24,12 @@ forms:
     order_id:
       - type: from_text
 
+  auth_form:
+    phone_number:
+      - type: from_text
+    otp:
+      - type: from_text
+
 slots:
   search_prod_choice:
     type: text
@@ -31,11 +37,17 @@ slots:
     type: text
   order_id:
     type: text
+  phone_number:
+    type: text
+  otp:
+    type: text
 
 actions:
   - action_show_time
   - action_search_submit
   - action_payment_status
+  - action_auth
+  - validate_auth_form
 
 responses:
   utter_greet:
@@ -83,6 +95,12 @@ responses:
 
   utter_job_opportunity:
     - text: "Thank you for showing intrest in abinbev. Visit our carreers portal at https://www.ab-inbev.com/careers/"
+
+  utter_ask_phone_number:
+    - text: "Please enter your phone number. An OTP will be sent to your phone to verfiy you"
+
+  utter_ask_otp:
+    - text: "Please enter the otp recieved on your phone"
 
 session_config:
   session_expiration_time: 60

@@ -10,9 +10,15 @@ import datetime as dt
 from typing import Any, Text, Dict, List
 from difflib import get_close_matches
 
-from rasa_sdk import Action, Tracker
+from rasa_sdk import Action, Tracker, FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import AllSlotsReset
+from rasa_sdk.types import DomainDict
+
+from twilio.rest import Client
+import random
+
+ottp = random.randint(1000, 9999)
 
 
 class ActionHelloWorld(Action):
@@ -167,3 +173,71 @@ class ActionPaymentStatus(Action):
         dispatcher.utter_message(text=f"Payment Status for order Id {ID} is {status}. {amount}")
 
         return [AllSlotsReset()]
+
+
+class ActionAuth(Action):
+
+    def name(self) -> Text:
+        return "action_auth"
+    
+    def validate_phone_number(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        
+        print("yoyoyoyoyoyoyoyoy")
+        account_sid = "AC083274c578353fe67a0eaad634de69d8"
+        auth_token = "f631eddc42197d50a3b440dcd1bd1891"
+        client = Client(account_sid, auth_token)
+
+        message = client.messages \
+            .create(
+                body='Your OTP for ABInBev Bot is ' + str(ottp),
+                from_='+16123240764',
+                to='+91'+phone
+            )
+
+        return {'phone_number': slot_value}
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        otp = tracker.get_slot("otp")
+        if str(otp) == str(ottp):
+            dispatcher.utter_message(text=f"Your phone is verified successfully!")
+        else:
+            dispatcher.utter_message(text=f"Unauthorized!")
+
+        return [AllSlotsReset()]
+
+
+class ValidateAuthForm(FormValidationAction):
+
+    def name(self) -> Text:
+        return "validate_auth_form"
+    
+    def validate_phone_number(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+        
+        print("yoyoyoyoyoyoyoyoy")
+        account_sid = "AC083274c578353fe67a0eaad634de69d8"
+        auth_token = "f631eddc42197d50a3b440dcd1bd1891"
+        client = Client(account_sid, auth_token)
+
+        message = client.messages \
+            .create(
+                body='Your OTP for ABInBev Bot is ' + str(ottp),
+                from_='+16123240764',
+                to='+91'+slot_value
+            )
+
+        return {'phone_number': slot_value}

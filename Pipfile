@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 rasa = {extras = ["full"], version = "*"}
+twilio = "*"
 
 [dev-packages]
 

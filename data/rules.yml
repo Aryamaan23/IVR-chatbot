@@ -57,3 +57,19 @@ rules:
     steps:
       - intent: job_opportunity
       - action: utter_job_opportunity
+
+  - rule: activate auth form
+    steps:
+      - intent: auth
+      - action: auth_form
+      - active_loop: auth_form
+
+  - rule: submit auth form
+    condition:
+      - active_loop: auth_form
+    steps:
+      - action: auth_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_auth

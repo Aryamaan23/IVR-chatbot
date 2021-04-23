@@ -156,3 +156,9 @@ nlu:
       - any work opportunity at abinbev
       - i want a job at abinbev
       - open for work at abinbev
+
+  - intent: auth
+    examples: |
+      - authorize me
+      - i want to do authorization
+      - auth
