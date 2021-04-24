@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 rasa = {extras = ["full"], version = "*"}
 twilio = "*"
+ipykernel = "*"
+pandas = "*"
 
 [dev-packages]
 

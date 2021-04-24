@@ -12,6 +12,8 @@ intents:
   - search_products
   - payment_status
   - collab
+  - tell_name
+
 
 forms:
   search_form:
@@ -30,6 +32,14 @@ forms:
     otp:
       - type: from_text
 
+  email_form:
+    email:
+      - type: from_text
+    subject:
+      - type: from_text
+    message:
+      - type: from_text
+
 slots:
   search_prod_choice:
     type: text
@@ -41,6 +51,12 @@ slots:
     type: text
   otp:
     type: text
+  email:
+    type: text
+  subject:
+    type: text
+  message:
+    type: text
 
 actions:
   - action_show_time
@@ -48,6 +64,8 @@ actions:
   - action_payment_status
   - action_auth
   - validate_auth_form
+  - action_submit
+
 
 responses:
   utter_greet:
@@ -101,6 +119,19 @@ responses:
 
   utter_ask_otp:
     - text: "Please enter the otp recieved on your phone"
+
+  utter_name:
+    - text: "My name is ABbot"
+
+  utter_ask_email:
+    - text: Please provide me the email ID whom you want to send the feedback.
+
+  utter_ask_subject:
+    - text: Please provide the subject query for your mail
+
+  utter_ask_message:
+    - text: Please provide the query for your mail
+
 
 session_config:
   session_expiration_time: 60

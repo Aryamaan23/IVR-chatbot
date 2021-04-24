@@ -162,3 +162,25 @@ nlu:
       - authorize me
       - i want to do authorization
       - auth
+
+
+
+  - intent: tell_name
+    examples: |
+      - what is your name?
+      - tell me your name
+      - what others call you
+      - what should I call you?
+
+  - intent: send_email
+    examples: |
+      - I want to send feedback
+      - I want to give feedback
+      - I have a problem
+      - I am having query
+      - I want to ask questions
+      - I am having some questions
+      
+
+
+

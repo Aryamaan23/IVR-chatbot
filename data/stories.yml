@@ -34,3 +34,10 @@ stories:
       - action: utter_greet
       - intent: give_time
       - action: action_show_time
+
+  - story: happy name path
+    steps: 
+      - intent: greet
+      - action: utter_greet
+      - intent: tell_name
+      - action: utter_name
