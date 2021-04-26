@@ -105,3 +105,148 @@ rules:
       - slot_was_set:
           - requested_slot: null
       - action: action_appointment_submit
+
+  - rule: Ask about budweiser
+    steps:
+      - intent: ask_budweiser
+      - action: utter_ask_budweiser
+
+  - rule: Ask about corona
+    steps:
+      - intent: ask_corona
+      - action: utter_ask_corona
+
+  - rule: Ask about stella artois
+    steps:
+      - intent: ask_stella_artois
+      - action: utter_ask_stella_artois
+
+  - rule: Ask about aguila
+    steps:
+      - intent: ask_aguila
+      - action: utter_ask_aguila
+
+  - rule: Ask about Beck's Blue
+    steps:
+      - intent: ask_becks_blue
+      - action: utter_ask_becks_blue
+
+  - rule: Ask about Bogota Lager
+    steps:
+      - intent: ask_bogota_lager
+      - action: utter_ask_bogota_lager
+
+  - rule: Ask about Boxing
+    steps:
+      - intent: ask_boxing_cat_contender_extra_pale_ale
+      - action: utter_ask_boxing_cat_contender_extra_pale_ale
+
+  - rule: Ask about Brahma
+    steps:
+      - intent: ask_brahma
+      - action: utter_ask_brahma
+
+  - rule: Ask about BudLight
+    steps:
+      - intent: ask_bud_light
+      - action: utter_ask_budlight
+
+  - rule: Ask about Cass
+    steps:
+      - intent: ask_cass
+      - action: utter_ask_cass
+
+  - rule: Ask about CastleLager
+    steps:
+      - intent: ask_castle_lager
+      - action: utter_ask_castle_lager
+
+  - rule: Ask about Dorada
+    steps:
+      - intent: ask_cusqueña_dorada
+      - action: utter_ask_dorada
+
+  - rule: Ask about eagle lager
+    steps:
+      - intent: ask_eagle_lager
+      - action: utter_ask_eagle
+
+  - rule: Ask about goose
+    steps:
+      - intent: ask_goose
+      - action: utter_ask_goose
+
+  - rule: Ask about harbin
+    steps:
+      - intent: ask_harbin
+      - action: utter_ask_harbin
+
+  - rule: Ask about haywards
+    steps:
+      - intent: ask_haywards
+      - action: utter_ask_haywards
+
+  - rule: Ask about hero
+    steps:
+      - intent: ask_hero
+      - action: utter_ask_hero
+
+  - rule: Ask about hoegaarden
+    steps:
+      - intent: ask_hoegaarden
+      - action: utter_ask_hoegarden
+
+  - rule: Ask about jupiler
+    steps:
+      - intent: ask_jupiler
+      - action: utter_ask_jupiler
+
+  - rule: Ask about labbattblue
+    steps:
+      - intent: ask_labatt_blue
+      - action: utter_ask_labbat_blue
+
+  - rule: Ask about leffe
+    steps:
+      - intent: ask_leffe
+      - action: utter_ask_leffe
+
+  - rule: Ask about michelob
+    steps:
+      - intent: ask_micheblob
+      - action: utter_ask_micheblob
+
+  - rule: Ask about modelo
+    steps:
+      - intent: ask_modelo
+      - action: utter_ask_modelo
+
+  - rule: Ask about patagonia
+    steps:
+      - intent: ask_patagonia
+      - action: utter_ask_patagonia
+
+  - rule: Ask about quilmes
+    steps:
+      - intent: ask_quilmes
+      - action: utter_ask_quilmes
+
+  - rule: Ask about Salva Vida
+    steps:
+      - intent: ask_vida
+      - action: utter_ask_vida
+
+  - rule: Ask about Skol
+    steps:
+      - intent: ask_skol
+      - action: utter_ask_skol
+
+  - rule: Ask about Victoria
+    steps:
+      - intent: ask_victoria
+      - action: utter_ask_victoria
+
+  - rule: Ask about Wals
+    steps:
+      - intent: ask_wals
+      - action: utter_ask_wals
