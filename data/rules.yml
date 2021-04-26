@@ -250,3 +250,22 @@ rules:
     steps:
       - intent: ask_wals
       - action: utter_ask_wals
+
+
+  - rule: activate beer discounts
+    steps:
+      - intent: beer_offers
+      - action: utter_ask_beer_offers
+      - action: discount_form
+      - active_loop: discount_form
+
+  - rule: submit beer discounts
+    condition:
+      - active_loop: discount_form
+    steps:
+      - action: discount_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_discount_status
+

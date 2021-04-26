@@ -199,6 +199,13 @@ nlu:
       - call agent
       - schdule my call
 
+  - intent: beer_offers
+    examples: |
+      - List of discount available on beers
+      - Discount on beers
+      - Offers on beers
+      - Latest Offers on beers
+
   - intent: ask_budweiser
     examples: |
       - I want to know about budweiser

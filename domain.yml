@@ -13,6 +13,7 @@ intents:
   - payment_status
   - collab
   - tell_name
+  - beer_offers
 
 forms:
   search_form:
@@ -45,6 +46,10 @@ forms:
     query_brief:
       - type: from_text
 
+  discount_form:
+    beer_id:
+      - type: from_text
+
 slots:
   search_prod_choice:
     type: text
@@ -66,6 +71,8 @@ slots:
     type: text
   query_brief:
     type: text
+  beer_id:
+    type: text
 
 actions:
   - action_show_time
@@ -75,6 +82,7 @@ actions:
   - validate_auth_form
   - action_mail_submit
   - action_appointment_submit
+  - action_discount_status
   - ask_budweiser
   - ask_corona
   - ask_stella_artois
@@ -147,7 +155,7 @@ responses:
     - text: "Enter the order ID of the product"
 
   utter_collab:
-    - text: "We are always open for collaborations, you can contact us here collab@abinbev.com"
+    - text: "We are always open for collaborations, you can contact us here https://collab@abinbev.com"
 
   utter_job_opportunity:
     - text: "Thank you for showing intrest in abinbev. Visit our carreers portal at https://www.ab-inbev.com/careers/"
@@ -175,6 +183,9 @@ responses:
 
   utter_ask_query_brief:
     - text: "Please write your query in breif."
+
+  utter_ask_beer_offers:
+    - text: "The list of id's of beers are mentioned below alongwith name.\n1ABInbev->Budweiser\n2ABInbev->Corona Extra\n3ABInbev->Stella Artois\n4ABInbev->Aguila\n5ABInbev->Becks Blue\n6ABInbev->Bogota Lager\n7ABInbev->Contender\n8ABInbev->Brahma Chopp\n9ABInbev->Bud Light\n10ABInbev->Cass Fresh\n11ABInbev->Castle Lager\n12ABInbev->Cusquena Dorada\n13ABInbev->Eagle Lager\n14ABInbev->Goose Island Bourbon County Brand Stout\n15ABInbev->Harbin\n16ABInbev->Haywards 5000\n17ABInbev->Hero\n18ABInbev->Hoegarden\n19ABInbev->Jupiler\n20ABInbev->Labatt Blue\n21ABInbev->Leffe\n22ABInbev->Michelob ULTRA\n23ABInbev->Modelo Especial\n24ABInbev->Patagonia 24.7\n25ABInbev->Quilmes\n26ABInbev->Salva Vida\n27ABInbev->Skol\n28ABInbev->Victoria\n29ABInbev->Wals Brut\n30ABInbev->Heineken\nType the Id of your preferred beer to know about the discount offers on that beer."
 
   utter_ask_budweiser:
     - text: "The yeast cells used to brew every bottle of our American-style lager are directly descended from the original culture used by founder Adolphus Busch.For more information, go to  https://www.budweiser.com"

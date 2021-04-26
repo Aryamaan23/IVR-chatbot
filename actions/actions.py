@@ -340,3 +340,179 @@ class ActionactionAppointment(Action):
         dispatcher.utter_message(text=f"Thanks for contacting us! We have notified our agents regaurding your query, you will soon recieve a call reguarding your issue.\n\nTicket {n} opened\nissue: {tracker.get_slot('query_brief')}")
     
         return [AllSlotsReset()]
+
+
+
+class Actionbeerdiscounts(Action):
+    
+    def name(self) -> Text:
+        return "action_discount_status"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+            beers=[
+               {
+                 "id":"1ABInbev",
+                 "name":"Budweiser",
+                 "discount":"22.2% off on Budweiser"
+               },
+               {
+                   "id":"2ABInbev",
+                   "name":"Corona Extra",
+                   "discount":"23.567% off on Corona Extra"
+               },
+               {
+                   "id":"3ABInbev",
+                   "name":"Stella Artois",
+                   "discount":"29% off on Corona Extra"
+               },
+               {
+                   "id":"4ABInbev",
+                   "name":"Aguila",
+                   "discount":"24.678% off on Aguila"
+               },
+               {
+                   "id":"5ABInbev",
+                   "name":"Becks Blue",
+                   "discount":"23.54% off on Becks Blue"
+               },
+               {
+                   "id":"6ABInbev",
+                   "name":"Bogota Lager",
+                   "discount":"24% off on Corona Extra"
+               },
+               {
+                   "id":"7ABInbev",
+                   "name":"Contender",
+                   "discount":"51% off on Corona Extra"
+               },
+               {
+                   "id":"8ABInbev",
+                   "name":"Brahma Chopp",
+                   "discount":"21% off on Brahma Chopp"
+               },
+               {
+                   "id":"9ABInbev",
+                   "name":"Bud Light",
+                   "discount":"19.5% off on Bud Light"
+               },
+               {
+                   "id":"10ABInbev",
+                   "name":"Cass Fresh",
+                   "discount":"18% off on Cass Fresh"
+               },
+               {
+                   "id":"11ABInbev",
+                   "name":"Castle Lager",
+                   "discount":"16% off on Corona Extra"
+               },
+               {
+                   "id":"12ABInbev",
+                   "name":"Cusquena Dorada",
+                   "discount":"10.5% off on Cusquena Dorada"
+               },
+               {
+                   "id":"13ABInbev",
+                   "name":"Eagle Lager",
+                   "discount":"11% off on Eagle Lager"
+               },
+               {
+                   "id":"14ABInbev",
+                   "name":"Goose Island Bourbon County Brand Stout",
+                   "discount":"12.38% off on Goose Island Bourbon County Brand Stout"
+               },
+               {
+                   "id":"15ABInbev",
+                   "name":"Harbin",
+                   "discount":"15% off on Harbin"
+               },
+               {
+                   "id":"16ABInbev",
+                   "name":"Haywards 5000",
+                   "discount":"9.5% off on Haywards 5000"
+               },
+               {
+                   "id":"17ABInbev",
+                   "name":"Hero",
+                   "discount":"12.34% off on Hero"
+               },
+               {
+                   "id":"18ABInbev",
+                   "name":"Hoegarden",
+                   "discount":"20% off on Hoegarden"
+               },
+               {
+                   "id":"19ABInbev",
+                   "name":"Jupiler",
+                   "discount":"32% off on Jupiler"
+               },
+               {
+                   "id":"20ABInbev",
+                   "name":"Labatt Blue",
+                   "discount":"27% off on Labatt Blue"
+               },
+               {
+                   "id":"21ABInbev",
+                   "name":"Leffe",
+                   "discount":"14% off on Leffe"
+               },
+               {
+                   "id":"22ABInbev",
+                   "name":"Michelob ULTRA",
+                   "discount":"12% off on Michleblob ULTRA"
+               },
+               {
+                   "id":"23ABInbev",
+                   "name":"Modelo Especial",
+                   "discount":"15% off on Modelo Especial"
+               },
+               {
+                   "id":"24ABInbev",
+                   "name":"Patagonia 24.7",
+                   "discount":"17.7% off on Patagonia"
+               },
+               {
+                   "id":"25ABInbev",
+                   "name":"Quilmes",
+                   "discount":"22.5% off on Quilmes"
+               },
+               {
+                   "id":"26ABInbev",
+                   "name":"Salva Vida",
+                   "discount":"28% off on Salva Vida"
+               },
+               {
+                   "id":"27ABInbev",
+                   "name":"Skol",
+                   "discount":"31% off on Skol"
+               },
+               {
+                   "id":"28ABInbev",
+                   "name":"Victoria",
+                   "discount":"29% off on Victoria"
+               },
+               {
+                   "id":"29ABInbev",
+                   "name":"Wals Brut",
+                   "discount":"32.2% off on Wals Brut"
+               },
+               {
+                   "id":"30ABInbev",
+                   "name":"Heineken",
+                   "discount":"11.1% off on Heineken"
+               }
+               
+            ]
+            beer_id=tracker.get_slot("beer_id")
+
+            a="beer is unavailable!!"
+           
+
+            for b in beers:
+                if b["id"]==beer_id:
+                    discount=b["discount"]
+                    dispatcher.utter_message(text=f"{discount}")
+
+            return [AllSlotsReset()]
