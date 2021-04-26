@@ -293,7 +293,7 @@ def SendEmail(toaddr,subject,message):
     msg = MIMEMultipart()
 
     msg['From'] = fromaddr
-    msg['To'] = toaddr
+    msg['To'] = toaddr  
     msg['Subject'] = subject
     body = message
     msg.attach(MIMEText(body, 'plain'))
@@ -310,3 +310,33 @@ def SendEmail(toaddr,subject,message):
     finally:
         s.quit()
 
+
+
+class ActionactionAppointment(Action):
+
+    def name(self) -> Text:
+        return "action_appointment_submit"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        query_type = tracker.get_slot("query_type")
+
+        contact = 9998887776
+        if query_type == "1":
+            contact = 9998889998
+        elif query_type == "2":
+            contact = 9998887778
+        elif query_type == "3":
+            contact = 6663354577
+        elif query_type == "4":
+            contact = 6667788875
+        
+        # notify the agent that they need to call
+
+        n = random.randint(100, 999)
+
+        dispatcher.utter_message(text=f"Thanks for contacting us! We have notified our agents regaurding your query, you will soon recieve a call reguarding your issue.\n\nTicket {n} opened\nissue: {tracker.get_slot('query_brief')}")
+    
+        return [AllSlotsReset()]

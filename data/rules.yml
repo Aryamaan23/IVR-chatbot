@@ -89,3 +89,19 @@ rules:
       - slot_was_set:
           - requested_slot: null
       - action: action_mail_submit
+
+  - rule: activate appointment form
+    steps:
+      - intent: schedule_appointment
+      - action: appointment_form
+      - active_loop: appointment_form
+
+  - rule: submit appointment form
+    condition:
+      - active_loop: appointment_form
+    steps:
+      - action: appointment_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_appointment_submit

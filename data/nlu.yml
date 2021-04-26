@@ -190,3 +190,11 @@ nlu:
       - staff is good
       - report an problem
       - report an issue
+
+  - intent: schedule_appointment
+    examples: |
+      - schedule appointment call
+      - i want to have a call
+      - customer care service
+      - call agent
+      - schdule my call
