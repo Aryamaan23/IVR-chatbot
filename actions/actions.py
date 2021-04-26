@@ -265,13 +265,15 @@ class ActionEmailSubmit(Action):
         elif dep == "2":
             email = "rnd@abinbev.com"
         elif dep == "3":
-            email = "purchasing@gmail.com"
+            email = "purchasing@abinbev.com"
         elif dep == "4":
-            email = "marketing@gmail.com"
+            email = "marketing@abinbev.com"
         elif dep == "5":
-            email = "hrm@gmail.com"
+            email = "hrm@abinbev.com"
         elif dep == "6":
-            email = "accountsfinance@gmail.com"
+            email = "accountsfinance@abinbev.com"
+        elif dep == "7":
+            email = "complaints@abinbev.com"
 
         SendEmail(
             "ankithans1947@gmail.com, pandeyaryamaan@gmail.com",

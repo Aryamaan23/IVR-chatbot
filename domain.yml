@@ -122,7 +122,7 @@ responses:
     - text: "My name is ABbot"
 
   utter_ask_department:
-    - text: "Please select the department.\n1 - Production\n2 - Research and Development\n3 - Purchasing\n4 - Marketing \n5 - Human Resource Management\n6 - Accounting and Finance"
+    - text: "Please select the department.\n1 - Production\n2 - Research and Development\n3 - Purchasing\n4 - Marketing \n5 - Human Resource Management\n6 - Accounting and Finance\n7 - Report complaints related to staff/agent, website, quality etc"
 
   utter_ask_subject:
     - text: Please provide the subject query for your feedback

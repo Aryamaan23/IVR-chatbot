@@ -163,8 +163,6 @@ nlu:
       - i want to do authorization
       - auth
 
-
-
   - intent: tell_name
     examples: |
       - what is your name?
@@ -180,7 +178,15 @@ nlu:
       - I am having query
       - I want to ask questions
       - I am having some questions
-      
-
-
-
+      - I have an issue
+      - I am facing an issue
+      - website failiure
+      - website is not loading
+      - quality of product is bad
+      - quality is very good
+      - staff is bad
+      - agent is badly behaving
+      - staff's behaviour is very bad
+      - staff is good
+      - report an problem
+      - report an issue
