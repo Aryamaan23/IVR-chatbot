@@ -247,9 +247,9 @@ class ValidateAuthForm(FormValidationAction):
 
         return {'phone_number': slot_value}
 
-class ActionSubmit(Action):
+class ActionEmailSubmit(Action):
     def name(self) -> Text:
-        return "action_submit"
+        return "action_mail_submit"
 
     def run(
         self,
@@ -258,83 +258,53 @@ class ActionSubmit(Action):
         domain: "DomainDict",
     ) -> List[Dict[Text,Any]]:
 
-         SendEmail(
-             tracker.get_slot("email"),
-             tracker.get_slot("subject"),
-             tracker.get_slot("message")
-         )
-         dispatcher.utter_message("Thanks for providing the feedback. We have sent your queries and feedbacks to {}".format(tracker.get_slot("email")))
-         return []
+        email = "feedback@abinbev.com"
+        dep = tracker.get_slot("department")
+        if dep == "1":
+            email = "productions@abinbev.com"
+        elif dep == "2":
+            email = "rnd@abinbev.com"
+        elif dep == "3":
+            email = "purchasing@gmail.com"
+        elif dep == "4":
+            email = "marketing@gmail.com"
+        elif dep == "5":
+            email = "hrm@gmail.com"
+        elif dep == "6":
+            email = "accountsfinance@gmail.com"
+
+        SendEmail(
+            "ankithans1947@gmail.com, pandeyaryamaan@gmail.com",
+            tracker.get_slot("subject"),
+            tracker.get_slot("message")
+        )
+        # await SendEmail(
+        #     "pandeyaryamaan@gmail.com",
+        #     tracker.get_slot("subject"),
+        #     tracker.get_slot("message")
+        # )
+        dispatcher.utter_message("Thanks for providing the feedback. We have sent your queries and feedbacks to {}".format(email))
+        return [AllSlotsReset()]
 
 def SendEmail(toaddr,subject,message):
     fromaddr = "aryamaan231101@gmail.com"
-    # instance of MIMEMultipart
     msg = MIMEMultipart()
 
-    # storing the senders email address
     msg['From'] = fromaddr
-
-    # storing the receivers email address
     msg['To'] = toaddr
-
-    # storing the subject
     msg['Subject'] = subject
-
-    # string to store the body of the mail
     body = message
-
-    # attach the body with the msg instance
     msg.attach(MIMEText(body, 'plain'))
 
-    # open the file to be sent
-    # filename = "/home/ashish/Downloads/webinar_rasa2_0.png"
-    # attachment = open(filename, "rb")
-    #
-    # # instance of MIMEBase and named as p
-    # p = MIMEBase('application', 'octet-stream')
-    #
-    # # To change the payload into encoded form
-    # p.set_payload((attachment).read())
-    #
-    # # encode into base64
-    # encoders.encode_base64(p)
-    #
-    # p.add_header('Content-Disposition', "attachment; filename= %s" % filename)
-    #
-    # # attach the instance 'p' to instance 'msg'
-    # msg.attach(p)
-
-    # creates SMTP session
     s = smtplib.SMTP('smtp.gmail.com', 587)
-
-    # start TLS for security
     s.starttls()
 
-
-    # Authentication
     try:
         s.login(fromaddr, "7752912609")
-
-        # Converts the Multipart msg into a string
         text = msg.as_string()
-
-        # sending the mail
         s.sendmail(fromaddr, toaddr, text)
     except:
         print("An Error occured while sending email.")
     finally:
-        # terminating the session
         s.quit()
 
-# class ActionHelloWorld(Action):
-#
-#     def name(self) -> Text:
-#         return "action_hello_world"
-#
-#     def run(self, dispatcher: CollectingDispatcher,
-#             tracker: Tracker,
-#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-#
-#         dispatcher.utter_message(text="Hello World!")
-#
-#         return []

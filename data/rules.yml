@@ -74,18 +74,18 @@ rules:
           - requested_slot: null
       - action: action_auth
 
-  - rule: Form Action
+  - rule: activate email form
     steps:
       - intent: send_email
       - action: email_form
       - active_loop: email_form
 
-  - rule: Submit Form
+  - rule: submit email form
     condition:
-    - active_loop: email_form
+      - active_loop: email_form
     steps:
-    - action: email_form
-    - active_loop: null
-    - slot_was_set:
-      - requested_slot: null
-    - action: action_submit
+      - action: email_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_mail_submit

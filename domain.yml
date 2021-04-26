@@ -14,7 +14,6 @@ intents:
   - collab
   - tell_name
 
-
 forms:
   search_form:
     search_prod_choice: # 1,2,3 for name, price and alchohal content
@@ -33,7 +32,7 @@ forms:
       - type: from_text
 
   email_form:
-    email:
+    department:
       - type: from_text
     subject:
       - type: from_text
@@ -51,7 +50,7 @@ slots:
     type: text
   otp:
     type: text
-  email:
+  department:
     type: text
   subject:
     type: text
@@ -64,8 +63,7 @@ actions:
   - action_payment_status
   - action_auth
   - validate_auth_form
-  - action_submit
-
+  - action_mail_submit
 
 responses:
   utter_greet:
@@ -123,15 +121,14 @@ responses:
   utter_name:
     - text: "My name is ABbot"
 
-  utter_ask_email:
-    - text: Please provide me the email ID whom you want to send the feedback.
+  utter_ask_department:
+    - text: "Please select the department.\n1 - Production\n2 - Research and Development\n3 - Purchasing\n4 - Marketing \n5 - Human Resource Management\n6 - Accounting and Finance"
 
   utter_ask_subject:
-    - text: Please provide the subject query for your mail
+    - text: Please provide the subject query for your feedback
 
   utter_ask_message:
-    - text: Please provide the query for your mail
-
+    - text: Please provide the query for your feedback
 
 session_config:
   session_expiration_time: 60
