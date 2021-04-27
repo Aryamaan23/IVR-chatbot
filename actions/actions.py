@@ -276,15 +276,15 @@ class ActionEmailSubmit(Action):
             email = "complaints@abinbev.com"
 
         SendEmail(
-            "ankithans1947@gmail.com, pandeyaryamaan@gmail.com",
+            "ankithans1947@gmail.com",
             tracker.get_slot("subject"),
             tracker.get_slot("message")
         )
-        # await SendEmail(
-        #     "pandeyaryamaan@gmail.com",
-        #     tracker.get_slot("subject"),
-        #     tracker.get_slot("message")
-        # )
+        SendEmail(
+            "pandeyaryamaan@gmail.com",
+            tracker.get_slot("subject"),
+            tracker.get_slot("message")
+        )
         dispatcher.utter_message("Thanks for providing the feedback. We have sent your queries and feedbacks to {}".format(email))
         return [AllSlotsReset()]
 
@@ -339,7 +339,7 @@ class ActionactionAppointment(Action):
 
         dispatcher.utter_message(text=f"Thanks for contacting us! We have notified our agents regaurding your query, you will soon recieve a call reguarding your issue.\n\nTicket {n} opened\nissue: {tracker.get_slot('query_brief')}")
     
-        return [AllSlotsReset()]
+        return []
 
 
 
