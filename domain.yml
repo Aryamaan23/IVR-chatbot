@@ -146,7 +146,7 @@ responses:
     - text: "Please visit the careers section https://www.ab-inbev.com/careers/ of our website for further information on job opportunities."
 
   utter_ask_search_prod_choice:
-    - text: "Enter your choice: \n1 search via name \n2 search via price \n3search via alchohal content"
+    - text: "Enter your choice: \n1 search via name \n2 search via price \n3 search via alchohal content"
 
   utter_ask_search_prod_value:
     - text: "Enter the value for the above choice"
@@ -185,7 +185,7 @@ responses:
     - text: "Please write your query in breif."
 
   utter_ask_beer_offers:
-    - text: "The list of id's of beers are mentioned below alongwith name.\n1ABInbev->Budweiser\n2ABInbev->Corona Extra\n3ABInbev->Stella Artois\n4ABInbev->Aguila\n5ABInbev->Becks Blue\n6ABInbev->Bogota Lager\n7ABInbev->Contender\n8ABInbev->Brahma Chopp\n9ABInbev->Bud Light\n10ABInbev->Cass Fresh\n11ABInbev->Castle Lager\n12ABInbev->Cusquena Dorada\n13ABInbev->Eagle Lager\n14ABInbev->Goose Island Bourbon County Brand Stout\n15ABInbev->Harbin\n16ABInbev->Haywards 5000\n17ABInbev->Hero\n18ABInbev->Hoegarden\n19ABInbev->Jupiler\n20ABInbev->Labatt Blue\n21ABInbev->Leffe\n22ABInbev->Michelob ULTRA\n23ABInbev->Modelo Especial\n24ABInbev->Patagonia 24.7\n25ABInbev->Quilmes\n26ABInbev->Salva Vida\n27ABInbev->Skol\n28ABInbev->Victoria\n29ABInbev->Wals Brut\n30ABInbev->Heineken\nType the Id of your preferred beer to know about the discount offers on that beer."
+    - text: "The list of id's of beers are mentioned below alongwith name.\n\n1 - Budweiser\n2 - Corona Extra\n3 - Stella Artois\n4 - Aguila\n5 - Becks Blue\n6 - Bogota Lager\n7 - Contender\n8 - Brahma Chopp\n9 - Bud Light\n10 - Cass Fresh\n11 - Castle Lager\n12 - Cusquena Dorada\n13 - Eagle Lager\n14 - Goose Island Bourbon County Brand Stout\n15 - Harbin\n16 - Haywards 5000\n17 - Hero\n18 - Hoegarden\n19 - Jupiler\n20 - Labatt Blue\n21 - Leffe\n22 - Michelob ULTRA\n23 - Modelo Especial\n24 - Patagonia 24.7\n25 - Quilmes\n26 - Salva Vida\n27 - Skol\n28 - Victoria\n29 - Wals Brut\n30 - Heineken\n\nType the Id of your preferred beer to know about the discount offers on that beer."
 
   utter_ask_budweiser:
     - text: "The yeast cells used to brew every bottle of our American-style lager are directly descended from the original culture used by founder Adolphus Busch.For more information, go to  https://www.budweiser.com"

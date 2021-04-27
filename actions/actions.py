@@ -354,152 +354,152 @@ class Actionbeerdiscounts(Action):
 
             beers=[
                {
-                 "id":"1ABInbev",
+                 "id":"1",
                  "name":"Budweiser",
                  "discount":"22.2% off on Budweiser"
                },
                {
-                   "id":"2ABInbev",
+                   "id":"2",
                    "name":"Corona Extra",
                    "discount":"23.567% off on Corona Extra"
                },
                {
-                   "id":"3ABInbev",
+                   "id":"3",
                    "name":"Stella Artois",
                    "discount":"29% off on Corona Extra"
                },
                {
-                   "id":"4ABInbev",
+                   "id":"4",
                    "name":"Aguila",
                    "discount":"24.678% off on Aguila"
                },
                {
-                   "id":"5ABInbev",
+                   "id":"5",
                    "name":"Becks Blue",
                    "discount":"23.54% off on Becks Blue"
                },
                {
-                   "id":"6ABInbev",
+                   "id":"6",
                    "name":"Bogota Lager",
                    "discount":"24% off on Corona Extra"
                },
                {
-                   "id":"7ABInbev",
+                   "id":"7",
                    "name":"Contender",
                    "discount":"51% off on Corona Extra"
                },
                {
-                   "id":"8ABInbev",
+                   "id":"8",
                    "name":"Brahma Chopp",
                    "discount":"21% off on Brahma Chopp"
                },
                {
-                   "id":"9ABInbev",
+                   "id":"9",
                    "name":"Bud Light",
                    "discount":"19.5% off on Bud Light"
                },
                {
-                   "id":"10ABInbev",
+                   "id":"10",
                    "name":"Cass Fresh",
                    "discount":"18% off on Cass Fresh"
                },
                {
-                   "id":"11ABInbev",
+                   "id":"11",
                    "name":"Castle Lager",
                    "discount":"16% off on Corona Extra"
                },
                {
-                   "id":"12ABInbev",
+                   "id":"12",
                    "name":"Cusquena Dorada",
                    "discount":"10.5% off on Cusquena Dorada"
                },
                {
-                   "id":"13ABInbev",
+                   "id":"13",
                    "name":"Eagle Lager",
                    "discount":"11% off on Eagle Lager"
                },
                {
-                   "id":"14ABInbev",
+                   "id":"14",
                    "name":"Goose Island Bourbon County Brand Stout",
                    "discount":"12.38% off on Goose Island Bourbon County Brand Stout"
                },
                {
-                   "id":"15ABInbev",
+                   "id":"15",
                    "name":"Harbin",
                    "discount":"15% off on Harbin"
                },
                {
-                   "id":"16ABInbev",
+                   "id":"16",
                    "name":"Haywards 5000",
                    "discount":"9.5% off on Haywards 5000"
                },
                {
-                   "id":"17ABInbev",
+                   "id":"17",
                    "name":"Hero",
                    "discount":"12.34% off on Hero"
                },
                {
-                   "id":"18ABInbev",
+                   "id":"18",
                    "name":"Hoegarden",
                    "discount":"20% off on Hoegarden"
                },
                {
-                   "id":"19ABInbev",
+                   "id":"19",
                    "name":"Jupiler",
                    "discount":"32% off on Jupiler"
                },
                {
-                   "id":"20ABInbev",
+                   "id":"20",
                    "name":"Labatt Blue",
                    "discount":"27% off on Labatt Blue"
                },
                {
-                   "id":"21ABInbev",
+                   "id":"21",
                    "name":"Leffe",
                    "discount":"14% off on Leffe"
                },
                {
-                   "id":"22ABInbev",
+                   "id":"22",
                    "name":"Michelob ULTRA",
                    "discount":"12% off on Michleblob ULTRA"
                },
                {
-                   "id":"23ABInbev",
+                   "id":"23",
                    "name":"Modelo Especial",
                    "discount":"15% off on Modelo Especial"
                },
                {
-                   "id":"24ABInbev",
+                   "id":"24",
                    "name":"Patagonia 24.7",
                    "discount":"17.7% off on Patagonia"
                },
                {
-                   "id":"25ABInbev",
+                   "id":"25",
                    "name":"Quilmes",
                    "discount":"22.5% off on Quilmes"
                },
                {
-                   "id":"26ABInbev",
+                   "id":"26",
                    "name":"Salva Vida",
                    "discount":"28% off on Salva Vida"
                },
                {
-                   "id":"27ABInbev",
+                   "id":"27",
                    "name":"Skol",
                    "discount":"31% off on Skol"
                },
                {
-                   "id":"28ABInbev",
+                   "id":"28",
                    "name":"Victoria",
                    "discount":"29% off on Victoria"
                },
                {
-                   "id":"29ABInbev",
+                   "id":"29",
                    "name":"Wals Brut",
                    "discount":"32.2% off on Wals Brut"
                },
                {
-                   "id":"30ABInbev",
+                   "id":"30",
                    "name":"Heineken",
                    "discount":"11.1% off on Heineken"
                }
@@ -514,5 +514,8 @@ class Actionbeerdiscounts(Action):
                 if b["id"]==beer_id:
                     discount=b["discount"]
                     dispatcher.utter_message(text=f"{discount}")
+                    return [AllSlotsReset()]
+            
+            dispatcher.utter_message(text=f"{a}")
 
             return [AllSlotsReset()]
