@@ -339,7 +339,7 @@ class ActionactionAppointment(Action):
 
         dispatcher.utter_message(text=f"Thanks for contacting us! We have notified our agents regaurding your query, you will soon recieve a call reguarding your issue.\n\nTicket {n} opened\nissue: {tracker.get_slot('query_brief')}")
     
-        return []
+        return [AllSlotsReset()]
 
 
 
