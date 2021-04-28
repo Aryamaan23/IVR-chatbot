@@ -45,6 +45,8 @@ forms:
       - type: from_text
     query_brief:
       - type: from_text
+    select_date_time:
+      - type: from_text
 
   discount_form:
     beer_id:
@@ -70,6 +72,8 @@ slots:
   query_type:
     type: text
   query_brief:
+    type: text
+  select_date_time:
     type: text
   beer_id:
     type: text
@@ -183,6 +187,9 @@ responses:
 
   utter_ask_query_brief:
     - text: "Please write your query in breif."
+
+  utter_ask_select_date_time:
+    - text: "select your prefered slot:\n1 - 2021-05-06\n2 - 2021-05-05\n3 - 2021-05-07"
 
   utter_ask_beer_offers:
     - text: "The list of id's of beers are mentioned below alongwith name.\n\n1 - Budweiser\n2 - Corona Extra\n3 - Stella Artois\n4 - Aguila\n5 - Becks Blue\n6 - Bogota Lager\n7 - Contender\n8 - Brahma Chopp\n9 - Bud Light\n10 - Cass Fresh\n11 - Castle Lager\n12 - Cusquena Dorada\n13 - Eagle Lager\n14 - Goose Island Bourbon County Brand Stout\n15 - Harbin\n16 - Haywards 5000\n17 - Hero\n18 - Hoegarden\n19 - Jupiler\n20 - Labatt Blue\n21 - Leffe\n22 - Michelob ULTRA\n23 - Modelo Especial\n24 - Patagonia 24.7\n25 - Quilmes\n26 - Salva Vida\n27 - Skol\n28 - Victoria\n29 - Wals Brut\n30 - Heineken\n\nType the Id of your preferred beer to know about the discount offers on that beer."

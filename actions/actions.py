@@ -3,6 +3,7 @@
 #
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/custom-actions
+from __future__ import print_function
 
 
 # This is a simple example for a custom action which utters "Hello World!"
@@ -21,9 +22,16 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+import datetime
+import os.path
+from googleapiclient.discovery import build
+from google_auth_oauthlib.flow import InstalledAppFlow
+from google.auth.transport.requests import Request
+from google.oauth2.credentials import Credentials
+
 
 ottp = random.randint(1000, 9999)
-
+SCOPES = ['https://www.googleapis.com/auth/calendar']
 
 
 class ActionHelloWorld(Action):
@@ -338,10 +346,82 @@ class ActionactionAppointment(Action):
         n = random.randint(100, 999)
 
         dispatcher.utter_message(text=f"Thanks for contacting us! We have notified our agents regaurding your query, you will soon recieve a call reguarding your issue.\n\nTicket {n} opened\nissue: {tracker.get_slot('query_brief')}")
-    
+        
+        slot = tracker.get_slot('select_date_time')
+        if slot == 1:
+            slot = '2021-05-05'
+        elif slot == 2:
+            slot = '2021-05-06'
+        elif slot == 3:
+            slot = '2021-05-07'
+        else:
+            slot = '2021-05-05'
+        date='2021-05-05'
+        start_time='4:00pm'
+        end_time='11:00pm'
+
+        start_date_str = date + start_time
+        end_date_str = date + end_time
+
+        start_date = dt.datetime.strptime(start_date_str, '%Y-%m-%d%I:%M%p')
+        end_date = dt.datetime.strptime(end_date_str, '%Y-%m-%d%I:%M%p')
+        e = create_event(tracker.get_slot("query_type"), start_date.isoformat(), end_date.isoformat(), tracker.get_slot('query_brief'), 'pandeyaryaman@gmail.com')
+        dispatcher.utter_message(text=f"Event has been added to your calender. Follow the url to procees further {e}")
+
         return [AllSlotsReset()]
 
 
+def create_event(name, start, end, description, email):
+    creds = None
+   
+    if os.path.exists('token.json'):
+        creds = Credentials.from_authorized_user_file('token.json', SCOPES)
+
+    if not creds or not creds.valid:
+        if creds and creds.expired and creds.refresh_token:
+            creds.refresh(Request())
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file(
+                'actions\secret.json', SCOPES)
+            creds = flow.run_local_server(port=0)
+
+        with open('token.json', 'w') as token:
+            token.write(creds.to_json())
+
+    service = build('calendar', 'v3', credentials=creds)
+    
+    event = {
+        'summary': name,
+        'location': '800 Howard St., San Francisco, CA 94103',
+        'description': description,
+        'start': {
+            'dateTime': start,
+            'timeZone': 'America/Los_Angeles',
+        },
+        'end': {
+            'dateTime': end,
+            'timeZone': 'America/Los_Angeles',
+        },
+        'recurrence': [
+            'RRULE:FREQ=DAILY;COUNT=2'
+        ],
+        'attendees': [
+            {'email': 'lpage@example.com'},
+            {'email': 'sbrin@example.com'},
+            {'email': 'ankithans1947@gmail.com'}
+        ],
+        'reminders': {
+            'useDefault': False,
+            'overrides': [
+                {'method': 'email', 'minutes': 24 * 60},
+                {'method': 'popup', 'minutes': 10},
+            ],
+        },
+    }
+
+    event = service.events().insert(calendarId='primary', body=event).execute()
+    print('Event created: %s' % (event.get('htmlLink')))
+    return event.get('htmlLink')
 
 class Actionbeerdiscounts(Action):
     
