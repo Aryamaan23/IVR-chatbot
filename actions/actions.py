@@ -366,7 +366,7 @@ class ActionactionAppointment(Action):
         start_date = dt.datetime.strptime(start_date_str, '%Y-%m-%d%I:%M%p')
         end_date = dt.datetime.strptime(end_date_str, '%Y-%m-%d%I:%M%p')
         e = create_event(tracker.get_slot("query_type"), start_date.isoformat(
-        ), end_date.isoformat(), tracker.get_slot('query_brief'), 'pandeyaryamaan@gmail.com')
+        ), end_date.isoformat(), tracker.get_slot('query_brief'), tracker.get_slot('prefered_email'))
         dispatcher.utter_message(
             text=f"Event has been added to your calender. Follow the url to procees further {e}")
 
@@ -408,7 +408,7 @@ def create_event(name, start, end, description, email):
             'RRULE:FREQ=DAILY;COUNT=2'
         ],
         'attendees': [
-            {'email': 'lpage@example.com'},
+            {'email': email},
             {'email': 'sbrin@example.com'},
             {'email': 'ankithans1947@gmail.com'},
             {'email': 'pandeyaryamaan@gmail.com'}
