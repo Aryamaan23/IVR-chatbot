@@ -365,7 +365,7 @@ class ActionactionAppointment(Action):
 
         start_date = dt.datetime.strptime(start_date_str, '%Y-%m-%d%I:%M%p')
         end_date = dt.datetime.strptime(end_date_str, '%Y-%m-%d%I:%M%p')
-        e = create_event(tracker.get_slot("query_type"), start_date.isoformat(), end_date.isoformat(), tracker.get_slot('query_brief'), 'pandeyaryaman@gmail.com')
+        e = create_event(tracker.get_slot("query_type"), start_date.isoformat(), end_date.isoformat(), tracker.get_slot('query_brief'), 'pandeyaryamaan@gmail.com')
         dispatcher.utter_message(text=f"Event has been added to your calender. Follow the url to procees further {e}")
 
         return [AllSlotsReset()]
