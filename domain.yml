@@ -23,13 +23,11 @@ forms:
       - type: from_text
 
   payment_form:
-    order_id:
-      - type: from_text
-
-  auth_form:
     phone_number:
       - type: from_text
     otp:
+      - type: from_text
+    order_id:
       - type: from_text
 
   email_form:
@@ -83,7 +81,7 @@ actions:
   - action_search_submit
   - action_payment_status
   - action_auth
-  - validate_auth_form
+  - validate_payment_form
   - action_mail_submit
   - action_appointment_submit
   - action_discount_status

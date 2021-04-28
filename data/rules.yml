@@ -58,21 +58,21 @@ rules:
       - intent: job_opportunity
       - action: utter_job_opportunity
 
-  - rule: activate auth form
-    steps:
-      - intent: auth
-      - action: auth_form
-      - active_loop: auth_form
+  # - rule: activate auth form
+  #   steps:
+  #     - intent: auth
+  #     - action: auth_form
+  #     - active_loop: auth_form
 
-  - rule: submit auth form
-    condition:
-      - active_loop: auth_form
-    steps:
-      - action: auth_form
-      - active_loop: null
-      - slot_was_set:
-          - requested_slot: null
-      - action: action_auth
+  # - rule: submit auth form
+  #   condition:
+  #     - active_loop: auth_form
+  #   steps:
+  #     - action: auth_form
+  #     - active_loop: null
+  #     - slot_was_set:
+  #         - requested_slot: null
+  #     - action: action_auth
 
   - rule: activate email form
     steps:
@@ -251,7 +251,6 @@ rules:
       - intent: ask_wals
       - action: utter_ask_wals
 
-
   - rule: activate beer discounts
     steps:
       - intent: beer_offers
@@ -268,4 +267,3 @@ rules:
       - slot_was_set:
           - requested_slot: null
       - action: action_discount_status
-
