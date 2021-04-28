@@ -72,7 +72,6 @@ nlu:
       - my day was horrible
       - I am sad
       - I don't feel very well
-      - I am disappointed
       - super sad
       - I'm so sad
       - sad
@@ -215,6 +214,12 @@ nlu:
       - I want updates of abinbev.
       - I want latest trends of abinbev.
       - I want to be in touch with abinbev.
+
+
+  - intent: ask_remind_call
+    examples: |
+      - remind me to call [Aryamaan](name: Aryamaan)
+      - remind me to call [Rahul](name: Rahul)
 
 
 
