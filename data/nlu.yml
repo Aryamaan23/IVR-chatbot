@@ -206,6 +206,20 @@ nlu:
       - Offers on beers
       - Latest Offers on beers
 
+
+  - intent: mail_signups
+    examples: |
+      - I am interested in abinbev products.
+      - I like abinbev products.
+      - I want to get updates of abinbev.
+      - I want updates of abinbev.
+      - I want latest trends of abinbev.
+      - I want to be in touch with abinbev.
+
+
+
+
+
   - intent: ask_budweiser
     examples: |
       - I want to know about budweiser

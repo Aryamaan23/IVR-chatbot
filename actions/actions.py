@@ -21,6 +21,7 @@ import random
 import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+from databaseconn import DataUpdate
 
 import datetime
 import os.path
@@ -600,5 +601,26 @@ class Actionbeerdiscounts(Action):
                 return [AllSlotsReset()]
 
         dispatcher.utter_message(text=f"{a}")
+
+        return [AllSlotsReset()]
+
+
+class ActionMailSignups(Action):
+    
+    def name(self) -> Text:
+        return "action_mail_signups"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        name_of_customer23=tracker.get_slot("name_of_customer")
+        email_of_customer23=tracker.get_slot("email_of_customer")
+        contact_of_customer23=tracker.get_slot("contact_of_customer")
+
+        dispatcher.utter_message(text=f"{dt.datetime.now()}")
+        DataUpdate(name_of_customer23,email_of_customer23,contact_of_customer23)
+        dispatcher.utter_message("Thanks for providing the details. We are so happy that one more gem got added to our communtiy!")
+
 
         return [AllSlotsReset()]
