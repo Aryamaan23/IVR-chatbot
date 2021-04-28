@@ -215,13 +215,13 @@ responses:
   utter_ask_beer_offers:
     - text: "The list of id's of beers are mentioned below alongwith name.\n\n1 - Budweiser\n2 - Corona Extra\n3 - Stella Artois\n4 - Aguila\n5 - Becks Blue\n6 - Bogota Lager\n7 - Contender\n8 - Brahma Chopp\n9 - Bud Light\n10 - Cass Fresh\n11 - Castle Lager\n12 - Cusquena Dorada\n13 - Eagle Lager\n14 - Goose Island Bourbon County Brand Stout\n15 - Harbin\n16 - Haywards 5000\n17 - Hero\n18 - Hoegarden\n19 - Jupiler\n20 - Labatt Blue\n21 - Leffe\n22 - Michelob ULTRA\n23 - Modelo Especial\n24 - Patagonia 24.7\n25 - Quilmes\n26 - Salva Vida\n27 - Skol\n28 - Victoria\n29 - Wals Brut\n30 - Heineken\n\nType the Id of your preferred beer to know about the discount offers on that beer."
 
-  utter_ask_mail_signups_name:
-    - text: "Ok we are adding your details to our mail signups list so that you get latest updates about us.\nPlease enter your name."
+  utter_ask_name_of_customer:
+    - text: "Ok we want to add your details to our mail signups list so that you get latest updates about ABInbev without any problem.\nPlease enter your name."
 
-  utter_ask_mail_signups_email:
+  utter_ask_email_of_customer:
     - text: "Please enter your email"
 
-  utter_ask_mail_signups_contact:
+  utter_ask_contact_of_customer:
     - text: "Please enter your contact number"
 
   

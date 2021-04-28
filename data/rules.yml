@@ -272,9 +272,6 @@ rules:
   - rule: activate mail signups
     steps:
       - intent: mail_signups
-      - action: utter_ask_mail_signups_name
-      - action: utter_ask_mail_signups_email
-      - action: utter_ask_mail_signups_contact
       - action: mail_signups_form
       - active_loop: mail_signups_form
 
