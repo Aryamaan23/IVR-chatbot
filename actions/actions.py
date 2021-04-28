@@ -59,35 +59,151 @@ class ActionSearch(Action):
 
         products = [
             {
-                "name": "abc",
-                "price": 556,
+                "name": "Budweiser",
+                "price": 400,
+                "alchohal_content": 12
+            },
+            {
+                "name": "Corona Extra",
+                "price": 500,
+                "alchohal_content": 13
+            },
+            {
+                "name": "Stella Artois",
+                "price": 1225,
+                "alchohal_content": 11
+            },
+            {
+                "name": "Aguila",
+                "price": 1250,
                 "alchohal_content": 10
             },
             {
-                "name": "def",
-                "price": 224,
-                "alchohal_content": 100
+                "name": "Becks Blue",
+                "price": 525,
+                "alchohal_content": 15
             },
             {
-                "name": "aryamaan",
-                "price": 12135,
-                "alchohal_content": 98
+                "name": "Bogota Lager",
+                "price": 700,
+                "alchohal_content": 16
             },
             {
-                "name": "ankit",
-                "price": 5789,
-                "alchohal_content": 5
+                "name": "Contender",
+                "price": 625,
+                "alchohal_content": 19
             },
             {
-                "name": "yo",
-                "price": 7898,
-                "alchohal_content": 50
+                "name": "Brahma Chopp",
+                "price": 1100,
+                "alchohal_content": 20
             },
             {
-                "name": "brio",
-                "price": 68,
-                "alchohal_content": 67
-            }
+                "name": "Bud Light",
+                "price": 900,
+                "alchohal_content": 13
+            },
+            {
+                "name": "Cass Fresh",
+                "price": 825,
+                "alchohal_content": 21
+            },
+            {
+                "name": "Castle Lager",
+                "price": 1000,
+                "alchohal_content": 14
+            },
+            {
+                "name": "Cusquena Dorada",
+                "price": 2000,
+                "alchohal_content": 25
+            },
+            {
+                "name": "Eagle Lager",
+                "price": 785,
+                "alchohal_content": 24
+            },
+            {
+                "name": "Goose Island Bourbon County Brand Stout",
+                "price": 2125,
+                "alchohal_content": 27
+            },
+            {
+                "name": "Harbin",
+                "price": 1230,
+                "alchohal_content": 23
+            },
+            {
+                "name": "Haywards 5000",
+                "price": 500,
+                "alchohal_content": 20
+            },
+            {
+                "name": "Hero",
+                "price": 725,
+                "alchohal_content": 29
+            },
+            {
+                "name": "Hoegarden",
+                "price": 890,
+                "alchohal_content": 30
+            },
+            {
+                "name": "Jupiler",
+                "price": 925,
+                "alchohal_content": 17
+            },
+            {
+                "name": "Labatt Blue",
+                "price": 1175,
+                "alchohal_content": 16
+            },
+            {
+                "name": "Leffe",
+                "price": 910,
+                "alchohal_content": 32
+            },
+            {
+                "name": "Micheblob ULTRA",
+                "price": 650,
+                "alchohal_content": 23
+            },
+            {
+                "name": "Modelo Especial",
+                "price": 699,
+                "alchohal_content": 13
+            },
+            {
+                "name": "Patagonia 24.7",
+                "price": 1500,
+                "alchohal_content": 29
+            },
+            {
+                "name": "Quilmes",
+                "price": 1700,
+                "alchohal_content": 20
+            },
+            {
+                "name": "Salva Vida",
+                "price": 1800,
+                "alchohal_content": 34
+            },
+            {
+                "name": "Skol",
+                "price": 2000,
+                "alchohal_content": 38
+            },
+            {
+                "name": "Victoria",
+                "price": 2200,
+                "alchohal_content": 33
+            },
+            {
+                "name": "Wals Brut",
+                "price": 2500,
+                "alchohal_content": 39
+            }    
+
         ]
 
         def closest(lst, K):
