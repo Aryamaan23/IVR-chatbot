@@ -408,7 +408,8 @@ def create_event(name, start, end, description, email):
         'attendees': [
             {'email': 'lpage@example.com'},
             {'email': 'sbrin@example.com'},
-            {'email': 'ankithans1947@gmail.com'}
+            {'email': 'ankithans1947@gmail.com'},
+            {'email': 'pandeyaryamaan@gmail.com'}
         ],
         'reminders': {
             'useDefault': False,
