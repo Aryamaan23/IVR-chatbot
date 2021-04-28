@@ -247,10 +247,10 @@ class ValidatePaymentForm(FormValidationAction):
         if str(otp) == str(ottp):
             dispatcher.utter_message(
                 text=f"Your phone is verified successfully!")
+            return {'otp': slot_value}
         else:
             dispatcher.utter_message(text=f"Unauthorized!")
-
-        return {'otp': slot_value}
+            return {'otp': None}
 
 
 class ActionEmailSubmit(Action):
