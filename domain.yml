@@ -12,7 +12,6 @@ intents:
   - search_products
   - payment_status
   - collab
-  - tell_name
   - beer_offers
   - mail_signups
 
@@ -54,12 +53,12 @@ forms:
       - type: from_text
 
   mail_signups_form:
-     name_of_customer:
-       - type: from_text
-     email_of_customer:
-       - type: from_text
-     contact_of_customer:
-       - type: from_text
+    name_of_customer:
+      - type: from_text
+    email_of_customer:
+      - type: from_text
+    contact_of_customer:
+      - type: from_text
 
 slots:
   search_prod_choice:
@@ -99,7 +98,6 @@ actions:
   - action_show_time
   - action_search_submit
   - action_payment_status
-  - action_auth
   - validate_payment_form
   - action_mail_submit
   - action_appointment_submit
@@ -137,7 +135,7 @@ actions:
 
 responses:
   utter_greet:
-    - text: "Hey! How are you?"
+    - text: "Hi 👋\nI am ABInBev Bot. need any assistance?\n\nStart asking me about\n👉 *payment*\n👉 *appointment* with a agent\n👉 *FAQ's*\n👉 *job* opportunities\n*👉 collaborations*\n👉 give *feedback*\n👉 *search* any product\n👉 add yourself to *mailing list* etc."
 
   utter_cheer_up:
     - text: "Here is something to cheer you up:"
@@ -147,28 +145,28 @@ responses:
     - text: "Did that help you?"
 
   utter_happy:
-    - text: "Great, carry on!"
+    - text: "Great, carry on! Ask us anything"
 
   utter_goodbye:
-    - text: "Bye"
+    - text: "Bye 🥺\nsee you soon!"
 
   utter_iamabot:
-    - text: "I am a bot, powered by Rasa."
+    - text: "Hi 👋\nI am ABInBev Bot. need any assistance?\n\nStart asking me about\n👉 *payment*\n👉 *appointment* with a agent\n👉 *FAQ's*\n👉 *job* opportunities\n*👉 collaborations*\n👉 give *feedback*\n👉 *search* any product\n👉 add yourself to *mailing list* etc."
 
   utter_faq/ask_main_brands:
-    - text: "Our diverse portfolio of well over 400 beer brands includes global brands Budweiser®, Corona® and Stella Artois®; multi-country brands Beck’s®, Castle®, Castle Lite®, Leffe® and Hoegaarden®; and local champions such as Aguila®, Antarctica®, Bud Light®, Brahma®, Cass®, Chernigivske®, Cristal®, Harbin®, Jupiler®, Klinskoye®, Michelob Ultra®, Modelo Especial®, Quilmes®, Victoria®, Sedrin®, Sibirskaya Korona®, and Skol®."
+    - text: "Our diverse portfolio of well over *400 beer brands* includes global brands like\nBudweiser®, Corona® and Stella Artois®;\n\n*multi-country brands* such as\nBeck’s®, Castle®, Castle Lite®, Leffe® and Hoegaarden®;\n\nand *local champions* such as\nAguila®, Antarctica®, Bud Light®, Brahma®, Cass®, Chernigivske®, Cristal®, Harbin®, Jupiler®, Klinskoye®, Michelob Ultra®, Modelo Especial®, Quilmes®, Victoria®, Sedrin®, Sibirskaya Korona®, and Skol®."
 
   utter_faq/ask_reponsible_drinking:
-    - text: "As the leading global brewer, we brew our beers with quality and care, to be enjoyed responsibly by consumers of legal drinking age. As part of our Dream to bring people together for a better world, we are also deeply committed to marketing and promoting our beers in a responsible way."
+    - text: "As the leading global brewer, we brew our beers with quality and care, to be enjoyed responsibly by consumers of *legal drinking age*. As part of our Dream to bring people together for a better world, we are also deeply committed to marketing and *promoting our beers in a responsible way*."
 
   utter_faq/ask_operate:
-    - text: "We have operations in more than 50 countries worldwide and a presence in virtually every major beer market. We are organized in 9 geographical Zones to maximize growth opportunities. We benefit from a geographically diversified global platform. The stability and strength of developed markets balances the growth opportunities of developing markets. We have a strong presence in key emerging regions with strong growth prospects such as Asia, Central and South America, and Africa."
+    - text: "We have operations in more than *50 countries worldwide* and a presence in virtually every major beer market. We are organized in *9 geographical Zones* to maximize growth opportunities.\nWe benefit from a geographically diversified global platform. The stability and strength of developed markets balances the growth opportunities of developing markets. We have a strong presence in key emerging regions with strong growth prospects such as Asia, Central and South America, and Africa."
 
   utter_faq/ask_job:
-    - text: "Please visit the careers section https://www.ab-inbev.com/careers/ of our website for further information on job opportunities."
+    - text: "Thank you for showing interest in abinbev. Please visit the careers section https://www.ab-inbev.com/careers/ of our website for further information on job opportunities."
 
   utter_ask_search_prod_choice:
-    - text: "Enter your choice: \n1 search via name \n2 search via price \n3 search via alchohal content"
+    - text: "Enter your choice: \n1 - search via name \n2 - search via price \n3 - search via alchohal content"
 
   utter_ask_search_prod_value:
     - text: "Enter the value for the above choice"
@@ -179,38 +177,32 @@ responses:
   utter_collab:
     - text: "We are always open for collaborations, you can contact us here https://collab@abinbev.com"
 
-  utter_job_opportunity:
-    - text: "Thank you for showing intrest in abinbev. Visit our carreers portal at https://www.ab-inbev.com/careers/"
-
   utter_ask_phone_number:
-    - text: "Please enter your phone number. An OTP will be sent to your phone to verfiy you"
+    - text: "Please enter your phone number. An OTP will be sent to your phone to verfiy you!"
 
   utter_ask_otp:
     - text: "Please enter the otp recieved on your phone"
 
-  utter_name:
-    - text: "My name is ABbot"
-
   utter_ask_department:
-    - text: "Please select the department.\n1 - Production\n2 - Research and Development\n3 - Purchasing\n4 - Marketing \n5 - Human Resource Management\n6 - Accounting and Finance\n7 - Report complaints related to staff/agent, website, quality etc"
+    - text: "Please select the department for giving feedback.\n1 - Production\n2 - Research and Development\n3 - Purchasing\n4 - Marketing \n5 - Human Resource Management\n6 - Accounting and Finance\n7 - Report complaints related to staff/agent, website, quality etc"
 
   utter_ask_subject:
-    - text: Please provide the subject query for your feedback
+    - text: Please provide the subject/title query for your feedback
 
   utter_ask_message:
-    - text: Please provide the query for your feedback
+    - text: Please provide the query/body for your feedback
 
   utter_ask_query_type:
-    - text: "Choose your query type.\n1 - Order related issues\n2 - Delivery related issues\n3 - Payment issue\n4 - other issue"
+    - text: "Choose your query/issue type.\n1 - Order related issues\n2 - Delivery related issues\n3 - Payment issue\n4 - other issue"
 
   utter_ask_query_brief:
-    - text: "Please write your query in breif."
+    - text: "Please write your query/issue in breif."
 
   utter_ask_select_date_time:
     - text: "select your prefered slot:\n1 - 2021-05-06\n2 - 2021-05-05\n3 - 2021-05-07"
 
   utter_ask_prefered_email:
-    - text: "Enter your preffered email address on which you would like to recieve the invitation"
+    - text: "Enter your preffered email address on which you would like to recieve the invitation. We will add the invitation to your calender."
 
   utter_ask_beer_offers:
     - text: "The list of id's of beers are mentioned below alongwith name.\n\n1 - Budweiser\n2 - Corona Extra\n3 - Stella Artois\n4 - Aguila\n5 - Becks Blue\n6 - Bogota Lager\n7 - Contender\n8 - Brahma Chopp\n9 - Bud Light\n10 - Cass Fresh\n11 - Castle Lager\n12 - Cusquena Dorada\n13 - Eagle Lager\n14 - Goose Island Bourbon County Brand Stout\n15 - Harbin\n16 - Haywards 5000\n17 - Hero\n18 - Hoegarden\n19 - Jupiler\n20 - Labatt Blue\n21 - Leffe\n22 - Michelob ULTRA\n23 - Modelo Especial\n24 - Patagonia 24.7\n25 - Quilmes\n26 - Salva Vida\n27 - Skol\n28 - Victoria\n29 - Wals Brut\n30 - Heineken\n\nType the Id of your preferred beer to know about the discount offers on that beer."
@@ -223,10 +215,6 @@ responses:
 
   utter_ask_contact_of_customer:
     - text: "Please enter your contact number"
-
-  
-
-
 
   utter_ask_budweiser:
     - text: "The yeast cells used to brew every bottle of our American-style lager are directly descended from the original culture used by founder Adolphus Busch.For more information, go to  https://www.budweiser.com"

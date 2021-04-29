@@ -53,11 +53,6 @@ rules:
       - intent: collab
       - action: utter_collab
 
-  - rule: job opportunities
-    steps:
-      - intent: job_opportunity
-      - action: utter_job_opportunity
-
   # - rule: activate auth form
   #   steps:
   #     - intent: auth
@@ -267,7 +262,6 @@ rules:
       - slot_was_set:
           - requested_slot: null
       - action: action_discount_status
-
 
   - rule: activate mail signups
     steps:

@@ -89,6 +89,10 @@ nlu:
       - are you a human?
       - am I talking to a bot?
       - am I talking to a human?
+      - my name
+      - your name
+      - what's your name
+      - tell name
 
   - intent: faq/ask_main_brands
     examples: |
@@ -96,12 +100,15 @@ nlu:
       - what are ABINBEV's main brands?
       - main brands of abinbev?
       - abinbev main brands?
+      - abinbev
 
   - intent: faq/ask_reponsible_drinking
     examples: |
       - WHAT IS AB INBEV’S POSITION ON RESPONSIBLE DRINKING?
       - responsible drinking in abinbev?
       - restriction on drinking in abinbev?
+      - do you allow drinking
+      - breaking govt norms in drinking
 
   - intent: faq/ask_operate
     examples: |
@@ -110,12 +117,25 @@ nlu:
       - where is abinbev located?
       - geographical zones of abinbev?
       - geographical locations of abinbev?
+      - operations
 
   - intent: faq/ask_job
     examples: |
       - job openings in abinbev?
       - apply for the job in abinbev?
       - WHERE CAN I APPLY FOR A JOB AT AB INBEV?
+      - job please
+      - i want a job at abinbev
+      - careers oportunities at abinbev
+      - job
+      - internship opportunity at company
+      - are you hiring interns
+      - when do you hire
+      - hire me pls
+      - Job opportunity
+      - I want to work at abinbev
+      - any work opportunity at abinbev
+      - open for work at abinbev
 
   - intent: give_time
     examples: |
@@ -131,6 +151,13 @@ nlu:
       - tell about this product
       - give some information about this product
       - brief me about this product
+      - can you search a product
+      - search via name
+      - search via alchohal
+      - search via price
+      - search
+      - find me a beer
+      - find me a product
 
   - intent: payment_status
     examples: |
@@ -139,6 +166,11 @@ nlu:
       - what is the status of my order
       - payment done with the order id
       - have I paid for the product
+      - should I pay now?
+      - when to pay for order
+      - order status
+      - check my payment status
+      - payment of order done
 
   - intent: collab
     examples: |
@@ -147,27 +179,8 @@ nlu:
       - I am open for collaboration
       - I want to give my services to abinbev
       - let's do buisiness together
-
-  - intent: job_opportunity
-    examples: |
-      - Job opportunity
-      - I want to work at abinbev
-      - any work opportunity at abinbev
-      - i want a job at abinbev
-      - open for work at abinbev
-
-  - intent: auth
-    examples: |
-      - authorize me
-      - i want to do authorization
-      - auth
-
-  - intent: tell_name
-    examples: |
-      - what is your name?
-      - tell me your name
-      - what others call you
-      - what should I call you?
+      - collaborate
+      - collab
 
   - intent: send_email
     examples: |
@@ -205,7 +218,6 @@ nlu:
       - Offers on beers
       - Latest Offers on beers
 
-
   - intent: mail_signups
     examples: |
       - I am interested in abinbev products.
@@ -215,15 +227,10 @@ nlu:
       - I want latest trends of abinbev.
       - I want to be in touch with abinbev.
 
-
   - intent: ask_remind_call
     examples: |
       - remind me to call [Aryamaan](name: Aryamaan)
       - remind me to call [Rahul](name: Rahul)
-
-
-
-
 
   - intent: ask_budweiser
     examples: |
