@@ -567,7 +567,7 @@ class Actionbeerdiscounts(Action):
             {
                 "id": "3",
                 "name": "Stella Artois",
-                "discount": "29% off on Corona Extra"
+                "discount": "29% off on Stella Artois"
             },
             {
                 "id": "4",
@@ -582,12 +582,12 @@ class Actionbeerdiscounts(Action):
             {
                 "id": "6",
                 "name": "Bogota Lager",
-                "discount": "24% off on Corona Extra"
+                "discount": "24% off on Bogota Lager"
             },
             {
                 "id": "7",
                 "name": "Contender",
-                "discount": "51% off on Corona Extra"
+                "discount": "51% off on Contender"
             },
             {
                 "id": "8",
@@ -607,7 +607,7 @@ class Actionbeerdiscounts(Action):
             {
                 "id": "11",
                 "name": "Castle Lager",
-                "discount": "16% off on Corona Extra"
+                "discount": "16% off on Castle Lager"
             },
             {
                 "id": "12",
@@ -740,3 +740,153 @@ class ActionMailSignups(Action):
 
 
         return [AllSlotsReset()]
+
+
+class ActionWarehouse(Action):
+    
+    def name(self) -> Text:
+        return "action_warehouse"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        dispatcher.utter_message(text=f"{dt.datetime.now()}")
+
+        warehousedb = [
+            {
+                "id": "1Abinbev",
+                "location": "Carton of Budweiser is present in drawer 2 of rack 5."
+            },
+            {
+                "id": "2Abinbev",
+                "location": "Carton of Corona is present in drawer 1 of rack 7."
+            },
+            {
+                "id": "3Abinbev",
+                "location": "Carton of Stella Artois is present in drawer 5 of rack 8."
+            },
+            {
+                "id": "4Abinbev",
+                "location": "Carton of Aguila is present in drawer 11 of rack 42."
+            },
+            {
+                "id": "5Abinbev",
+                "location": "Carton of Becks Blue is present in drawer 12 of rack 25."
+            },
+            {
+                "id": "6Abinbev",
+                "location": "Carton of Bogota Lager is present in drawer 13 of rack 23."
+            },
+            {
+                "id": "7Abinbev",
+                "location": "Carton of Contender is present in drawer 17 of rack 85.",
+            },
+            {
+                "id": "8Abinbev",
+                "location": "Carton of Brahma Chopp is present in drawer 18 of rack 57."
+            },
+            {
+                "id": "9Abinbev",
+                "location": "Carton of Bud Light is present in drawer 14 of rack 55."
+            },
+            {
+                "id": "10Abinbev",
+                "location": "Carton of Cass Fresh is present in drawer 19 of rack 65."
+            },
+            {
+                "id": "11Abinbev",
+                "location": "Carton of Castle Lager is present in drawer 22 of rack 73."
+            },
+            {
+                "id": "12Abinbev",
+                "location": "Carton of Cusquena Dorada is present in drawer 25 of rack 79."
+            },
+            {
+                "id": "13Abinbev",
+                "location": "Carton of Eagle Lager is present in drawer 7 of rack 92."
+            },
+            {
+                "id": "14Abinbev",
+                "location": "Carton of Goose Island Bourbon County Brand Stout is present in drawer 19 of rack 67."
+            },
+            {
+                "id": "15Abinbev",
+                "location": "Carton of Harbin is present in drawer 13 of rack 53."
+            },
+            {
+                "id": "16Abinbev",
+                "location": "Carton of Haywards 5000 is present in drawer 8 of rack 99."
+            },
+            {
+                "id": "17Abinbev",
+                "location": "Carton of Hero is present in drawer 4 of rack 43."
+            },
+            {
+                "id": "18Abinbev",
+                "location": "Carton of Hoegarden is present in drawer 9 of rack 22."
+            },
+            {
+                "id": "19Abinbev",
+                "location": "Carton of Jupiler is present in drawer 7 of rack 61.",
+            },
+            {
+                "id": "20Abinbev",
+                "location": "Carton of Labatt Blue is present in drawer 6 of rack 52."
+            },
+            {
+                "id": "21Abinbev",
+                "location": "Carton of Leffe is present in drawer 7 of rack 32."
+            },
+            {
+                "id": "22Abinbev",
+                "location": "Carton of Michleblob ULTRA is present in drawer 6 of rack 11."
+            },
+            {
+                "id": "23Abinbev",
+                "location": "Carton of Modelo Especial is present in drawer 7 of rack 41."
+            },
+            {
+                "id": "24Abinbev",
+                "location": "Carton of Patagonia is present in drawer 9 of rack 17. "
+            },
+            {
+                "id": "25Abinbev",
+                "location": "Carton of Quilmes is present in drawer 2 of rack 5."
+            },
+            {
+                "id": "26Abinbev",
+                "location": "Carton of Salva Vida is present in drawer 5 of rack 40."
+            },
+            {
+                "id": "27Abinbev",
+                "location": "Carton of Skol is present in drawer 7 of rack 88."
+            },
+            {
+                "id": "28Abinbev",
+                "location": "Carton of Victoria is present in drawer 13 of rack 44."
+            },
+            {
+                "id": "29Abinbev",
+                "location": "Carton of Wals Brut is present in drawer 11 of rack 33."
+            },
+            {
+                "id": "30Abinbev",
+                "location": "Carton of Heineken is present in drawer 8 of rack 11."
+            }
+
+        ]
+        a="Sorry you are entering the wrong unique ID.Failed to authorize, please write the correct ID to know the location of product in warehouse."
+
+        unique_id = tracker.get_slot("id_of_product")
+
+        for i in warehousedb:
+            if i["id"] == unique_id:
+                location23 = i["location"]
+                dispatcher.utter_message(text=f"{location23}")
+                return [AllSlotsReset()]
+            
+        dispatcher.utter_message(text=f"{a}")
+
+        return [AllSlotsReset()]
+

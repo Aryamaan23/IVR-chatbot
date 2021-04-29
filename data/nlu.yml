@@ -227,6 +227,16 @@ nlu:
       - I want latest trends of abinbev.
       - I want to be in touch with abinbev.
 
+
+  - intent: warehouse_products
+    examples: |
+      - Can you tell me about the products which are available at warehouse?
+      - I want to know location of the carton of beer in warehouse?
+      - I want to deliver this product, can you tell the location of this prdouct in warehouse?
+      - I am facing difficulty in locating the product in warehouse.
+      - I got exhausted in searching the product in warehouse.
+
+
   - intent: ask_remind_call
     examples: |
       - remind me to call [Aryamaan](name: Aryamaan)
