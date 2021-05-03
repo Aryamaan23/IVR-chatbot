@@ -202,7 +202,7 @@ class ActionSearch(Action):
                 "name": "Wals Brut",
                 "price": 2500,
                 "alchohal_content": 39
-            }    
+            }
 
         ]
 
@@ -220,7 +220,9 @@ class ActionSearch(Action):
 
             for p in products:
                 if p["name"] == nearest[0]:
-                    dispatcher.utter_message(text=f"{p}")
+                    dispatcher.utter_message(text="Here is your search result")
+                    dispatcher.utter_message(
+                        text=f"Name: {p['name']}\nPrice:  ₹{p['price']}\nAlcohal Content: {p['alchohal_content']}%")
                     break
 
         elif choice == "2":
@@ -230,7 +232,9 @@ class ActionSearch(Action):
             nearest = closest(pr, int(value))
             for p in products:
                 if p["price"] == nearest:
-                    dispatcher.utter_message(text=f"{p} {nearest}")
+                    dispatcher.utter_message(text="Here is your search result")
+                    dispatcher.utter_message(
+                        text=f"Name: {p['name']}\nPrice:  ₹{p['price']}\nAlcohal Content: {p['alchohal_content']}%")
                     break
 
         elif choice == "3":
@@ -240,7 +244,9 @@ class ActionSearch(Action):
             nearest = closest(pr, int(value))
             for p in products:
                 if p["alchohal_content"] == nearest:
-                    dispatcher.utter_message(text=f"{p} {nearest}")
+                    dispatcher.utter_message(text="Here is your search result")
+                    dispatcher.utter_message(
+                        text=f"Name: {p['name']}\nPrice:  ₹{p['price']}\nAlcohal Content: {p['alchohal_content']}%")
                     break
 
         else:
@@ -722,7 +728,7 @@ class Actionbeerdiscounts(Action):
 
 
 class ActionMailSignups(Action):
-    
+
     def name(self) -> Text:
         return "action_mail_signups"
 
@@ -730,20 +736,21 @@ class ActionMailSignups(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        name_of_customer23=tracker.get_slot("name_of_customer")
-        email_of_customer23=tracker.get_slot("email_of_customer")
-        contact_of_customer23=tracker.get_slot("contact_of_customer")
+        name_of_customer23 = tracker.get_slot("name_of_customer")
+        email_of_customer23 = tracker.get_slot("email_of_customer")
+        contact_of_customer23 = tracker.get_slot("contact_of_customer")
 
         dispatcher.utter_message(text=f"{dt.datetime.now()}")
-        DataUpdate(name_of_customer23,email_of_customer23,contact_of_customer23)
-        dispatcher.utter_message("Thanks for providing the details. We are so happy that one more gem got added to our communtiy!")
-
+        DataUpdate(name_of_customer23, email_of_customer23,
+                   contact_of_customer23)
+        dispatcher.utter_message(
+            "Thanks for providing the details. We are so happy that one more gem got added to our communtiy!")
 
         return [AllSlotsReset()]
 
 
 class ActionWarehouse(Action):
-    
+
     def name(self) -> Text:
         return "action_warehouse"
 
@@ -876,7 +883,7 @@ class ActionWarehouse(Action):
             }
 
         ]
-        a="Sorry you are entering the wrong unique ID.Failed to authorize, please write the correct ID to know the location of product in warehouse."
+        a = "Sorry you are entering the wrong unique ID.Failed to authorize, please write the correct ID to know the location of product in warehouse."
 
         unique_id = tracker.get_slot("id_of_product")
 
@@ -885,8 +892,7 @@ class ActionWarehouse(Action):
                 location23 = i["location"]
                 dispatcher.utter_message(text=f"{location23}")
                 return [AllSlotsReset()]
-            
+
         dispatcher.utter_message(text=f"{a}")
 
         return [AllSlotsReset()]
-

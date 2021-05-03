@@ -143,7 +143,7 @@ actions:
 
 responses:
   utter_greet:
-    - text: "Hi 👋\nI am ABInBev Bot. need any assistance?\n\nStart asking me about\n👉 *payment*\n👉 *appointment* with a agent\n👉 *FAQ's*\n👉 *job* opportunities\n*👉 collaborations*\n👉 give *feedback*\n👉 *search* any product\n👉 add yourself to *mailing list* etc."
+    - text: "Hi 👋\nI am ABInBev Bot. need any assistance?\n\nStart asking me about\n👉 *payment*\n👉 *appointment* with a agent\n👉 *FAQ's*\n👉 *job* opportunities\n👉 *collaborations*\n👉 give *feedback*\n👉 *search* any product\n👉 add yourself to *mailing list* etc."
 
   utter_cheer_up:
     - text: "Here is something to cheer you up:"
@@ -159,7 +159,7 @@ responses:
     - text: "Bye 🥺\nsee you soon!"
 
   utter_iamabot:
-    - text: "Hi 👋\nI am ABInBev Bot. need any assistance?\n\nStart asking me about\n👉 *payment*\n👉 *appointment* with a agent\n👉 *FAQ's*\n👉 *job* opportunities\n*👉 collaborations*\n👉 give *feedback*\n👉 *search* any product\n👉 add yourself to *mailing list* etc."
+    - text: "Hi 👋\nI am ABInBev Bot. need any assistance?\n\nStart asking me about\n👉 *payment*\n👉 *appointment* with a agent\n👉 *FAQ's*\n👉 *job* opportunities\n👉 *collaborations*\n👉 give *feedback*\n👉 *search* any product\n👉 add yourself to *mailing list* etc."
 
   utter_faq/ask_main_brands:
     - text: "Our diverse portfolio of well over *400 beer brands* includes global brands like\nBudweiser®, Corona® and Stella Artois®;\n\n*multi-country brands* such as\nBeck’s®, Castle®, Castle Lite®, Leffe® and Hoegaarden®;\n\nand *local champions* such as\nAguila®, Antarctica®, Bud Light®, Brahma®, Cass®, Chernigivske®, Cristal®, Harbin®, Jupiler®, Klinskoye®, Michelob Ultra®, Modelo Especial®, Quilmes®, Victoria®, Sedrin®, Sibirskaya Korona®, and Skol®."
