@@ -175,6 +175,10 @@ responses:
 
   utter_ask_search_prod_choice:
     - text: "Enter your choice: \n1 - search via name \n2 - search via price \n3 - search via alchohal content"
+      buttons:
+        - title: "1"
+        - title: "2"
+        - title: "3"
 
   utter_ask_search_prod_value:
     - text: "Enter the value for the above choice"

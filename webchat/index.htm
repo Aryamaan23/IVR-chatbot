@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.css" />
+</head>
+  <body>
+    <div class="chat-container"></div>
+  
+    <script src="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.js"/></script>
+    <script type="text/javascript">
+      var chatroom = new window.Chatroom({
+        host: "http://localhost:5005",
+        title: "ABInBev Bot",
+        container: document.querySelector(".chat-container"),
+        welcomeMessage: "Hi I am a ABInBev Bot. How may I help you?",
+        speechRecognition: "en-US",
+        voiceLang: "en-US"
+      });
+      chatroom.openChat();
+    </script>
+  </body>
+  </html>
