@@ -27,7 +27,7 @@ for i in r.json():
     bot_message = i['text']
     print(f"{bot_message}")
 
-myobj = gTTS(text=translator.translate(bot_message, 'hi'),lang='hi')
+myobj = gTTS(text=translator.translate("Hi", 'hi'),lang='hi')
 myobj.save("welcome.mp3")
 print('saved')
 # Playing the converted file
@@ -35,15 +35,17 @@ print('saved')
 playsound("welcome.mp3")
 
 while bot_message != "Bye" or bot_message!='thanks':
-
+    
     r = sr.Recognizer()  # initialize recognizer
     with sr.Microphone() as source:  # mention source it will be either Microphone or audio files.
         print("Speak Anything :")
+        r.adjust_for_ambient_noise(source)
         audio = r.listen(source)  # listen to the source
+        print("hi")
         try:
             message = r.recognize_google(audio)  # use recognizer to convert our audio into text part.
             # translator = Translator(to_lang='en')
-            print("You said : {}".format(translator.translate(message, "hi")))
+            print("You said : {}".format(translator.translate(message, "en")))
 
         except:
             print("Sorry could not recognize your voice")  # In case of voice not recognized  clearly
