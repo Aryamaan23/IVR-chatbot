@@ -29,6 +29,7 @@ from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
+from prettytable import PrettyTable
 
 
 ottp = random.randint(1000, 9999)
@@ -895,5 +896,69 @@ class ActionWarehouse(Action):
                 return [AllSlotsReset()]
 
         dispatcher.utter_message(text=f"{a}")
+
+        return [AllSlotsReset()]
+
+
+class ActionRecentOrders(Action):
+
+    def name(self) -> Text:
+        return "action_recent_orders"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        orders = [
+            {
+                "id": "1",
+                "payment_status": True,
+                "price": 4553,
+                "customer_contact": "9988776676"
+            },
+            {
+                "id": "2",
+                "payment_status": True,
+                "price": 4553,
+                "customer_contact": "9988776676"
+            },
+            {
+                "id": "3",
+                "payment_status": True,
+                "price": 4553,
+                "customer_contact": "9988776676"
+            },
+            {
+                "id": "4",
+                "payment_status": True,
+                "price": 4553,
+                "customer_contact": "9988776676"
+            },
+            {
+                "id": "5",
+                "payment_status": True,
+                "price": 4553,
+                "customer_contact": "9988776676"
+            },
+            {
+                "id": "6",
+                "payment_status": True,
+                "price": 4553,
+                "customer_contact": "9988776676"
+            },
+            {
+                "id": "7",
+                "payment_status": True,
+                "price": 4553,
+                "customer_contact": "9988776676"
+            }
+        ]
+
+        t = PrettyTable(['Id', 'Payment', "Price", 'Contact'])
+
+        for order in orders:
+            t.add_row([order["id"], order["payment_status"], order["price"], order["customer_contact"]])
+
+        dispatcher.utter_message(text=f"{t}")
 
         return [AllSlotsReset()]

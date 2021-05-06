@@ -101,6 +101,27 @@ rules:
           - requested_slot: null
       - action: action_appointment_submit
 
+  - rule: activate recent orders form
+    steps:
+      - intent: grab_recent_orders
+      - action: recent_orders_form
+      - active_loop: recent_orders_form
+
+  - rule: submit recent orders form
+    condition:
+      - active_loop: recent_orders_form
+    steps:
+      - action: recent_orders_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_recent_orders
+
+
+
+
+
+
   - rule: Ask about budweiser
     steps:
       - intent: ask_budweiser

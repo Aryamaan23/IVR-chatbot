@@ -64,6 +64,12 @@ forms:
   warehouse_form:
     id_of_product:
       - type: from_text
+  
+  recent_orders_form:
+    recent_orders_choice: # 1, 2 for get orders by date & get orders by month respectively
+      - type: from_text
+    recent_orders_value:
+      - type: from_text
 
 slots:
   search_prod_choice:
@@ -100,6 +106,10 @@ slots:
     type: text
   id_of_product:
     type: text
+  recent_orders_choice:
+    type: text
+  recent_orders_value:
+    type: text
 
 actions:
   - action_show_time
@@ -111,6 +121,7 @@ actions:
   - action_discount_status
   - action_mail_signups
   - action_warehouse
+  - action_recent_orders
   - ask_budweiser
   - ask_corona
   - ask_stella_artois
@@ -231,6 +242,18 @@ responses:
   utter_ask_id_of_product:
     - text: "Please enter the unique id of the desired product,in order to ensure that you are employee.\nAfter entering the unique id you will be told the location of product in warehouse."
 
+  utter_ask_recent_orders_choice:
+    - text: "How do you want to get the recent orders?\n1 - latest 5 orders\n2 - latest 20 orders\n3 - by date\n4 - by month"
+
+  utter_ask_recent_orders_value:
+    - text: "Please enter the value for above choice"
+  
+  
+  
+  
+  
+  
+  
   utter_ask_budweiser:
     - text: "The yeast cells used to brew every bottle of our American-style lager are directly descended from the original culture used by founder Adolphus Busch.For more information, go to  https://www.budweiser.com"
       image: "https://www.ab-inbev.com/content/dam/abinbev/our-brands/our-beer/desktop/beer-cards/Budweiser_Card.png"

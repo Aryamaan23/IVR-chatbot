@@ -171,6 +171,15 @@ nlu:
       - order status
       - check my payment status
       - payment of order done
+  
+  - intent: grab_recent_orders
+    examples: |
+      - recent orders
+      - grab recent orders
+      - give me recent orders
+      - tell me about latest orders
+      - what are the recent orders
+      - past orders
 
   - intent: collab
     examples: |
