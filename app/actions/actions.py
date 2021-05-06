@@ -308,6 +308,7 @@ class ActionPaymentStatus(Action):
 
         dispatcher.utter_message(
             text=f"Payment Status for order Id {ID} is {status}. {amount}")
+        dispatcher.utter_image_url(image="https://5.imimg.com/data5/NI/BH/MY-3360774/gst-bill-2finvoice-book-500x500.jpg")
 
         return [AllSlotsReset()]
 
