@@ -1168,7 +1168,39 @@ class ActionJobForm(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
-        mail_body = "Job ID: {tracker.get_slot('job_id')}\nResume: {tracker.get_slot('resume_link')}\nCover Letter: {tracker.get_slot(cover_letter)}\nPortfolio: {tracker.get_slot('portfolio')}\nContact: {tracker.get_slot('email')}"
-        dispatcher.utter_message("Thank you so much for applying to ABInBev! Please know that your application has been received and a member of our team will be reviewing it soon.\nIf your application seems like a good fit for the position, then a member of our team will be in contact with you.")
+
+        mail_body = f"Job ID: {tracker.get_slot('job_id')}\nResume: {tracker.get_slot('resume_link')}\nCover Letter: {tracker.get_slot('cover_letter')}\nPortfolio: {tracker.get_slot('portfolio')}\nContact: {tracker.get_slot('email')}"
+        SendEmail1947(
+                 "ankithans1947@gmail.com",
+                 mail_body
+             )
+        SendEmail1947(
+                "pandeyaryamaan@gmail.com",
+                mail_body
+            )
+        dispatcher.utter_message("Thank you so much for applying to ABInBev! Please know that your application has been received and a member of our team will be reviewing it soon.\nIf your application seems like a good fit for the position, then a member of our team will soon contact you.")
 
         return [AllSlotsReset()]
+
+
+
+def SendEmail1947(toaddr,message):
+    fromaddr = "hrab9016@gmail.com"
+    msg = MIMEMultipart()
+
+    msg['From'] = fromaddr
+    msg['To'] = toaddr
+    body = message
+    msg.attach(MIMEText(body, 'plain'))
+
+    s = smtplib.SMTP('smtp.gmail.com', 587)
+    s.starttls()
+
+    try:
+        s.login(fromaddr, "Vandana@123")
+        text = msg.as_string()
+        s.sendmail(fromaddr, toaddr, text)
+    except:
+        print("An Error occured while sending email.")
+    finally:
+        s.quit()
