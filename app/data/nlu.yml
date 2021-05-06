@@ -246,6 +246,14 @@ nlu:
       - I got exhausted in searching the product in warehouse.
 
 
+  - intent: order_product
+    examples: |
+      - I want to place an order
+      - I want to buy a prdouct
+      - I want to do shopping
+      - I want to get a prdouct
+
+
   - intent: ask_remind_call
     examples: |
       - remind me to call [Aryamaan](name: Aryamaan)

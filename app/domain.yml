@@ -15,6 +15,7 @@ intents:
   - beer_offers
   - mail_signups
   - warehouse_products
+  - order_product
 
 forms:
   search_form:
@@ -71,6 +72,17 @@ forms:
     recent_orders_value:
       - type: from_text
 
+  order_form:
+    type_of_payment:
+      - type: from_text
+    order_subject:
+      - type: from_text
+    order:
+      - type: from_text
+    
+
+
+
 slots:
   search_prod_choice:
     type: text
@@ -110,6 +122,12 @@ slots:
     type: text
   recent_orders_value:
     type: text
+  type_of_payment:
+    type: text
+  order_subject:
+    type: text
+  order:
+    type: text
 
 actions:
   - action_show_time
@@ -122,7 +140,9 @@ actions:
   - action_mail_signups
   - action_warehouse
   - action_recent_orders
+  - action_order_product
   - ask_budweiser
+  - ask_order_product
   - ask_corona
   - ask_stella_artois
   - ask_aguila
@@ -251,6 +271,17 @@ responses:
   
   
   
+  
+  utter_ask_type_of_payment:
+    - text: "Choose your preferred payment choice.\n1->Cash on Delivery(COD)\n2->Online Transaction"
+  
+  utter_ask_order_subject:
+    - text: "Please enter the subject for your order"
+  
+  
+  utter_ask_order:
+    - text: "Please enter the details of your order"
+
   
   
   

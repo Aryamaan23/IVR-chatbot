@@ -316,3 +316,20 @@ rules:
       - slot_was_set:
           - requested_slot: null
       - action: action_warehouse
+
+
+  - rule: activate order products
+    steps:
+      - intent: order_product
+      - action: order_form
+      - active_loop: order_form
+
+  - rule: submit order products
+    condition:
+      - active_loop: order_form
+    steps:
+      - action: order_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_order_product
