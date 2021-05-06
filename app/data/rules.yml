@@ -117,6 +117,22 @@ rules:
           - requested_slot: null
       - action: action_recent_orders
 
+  - rule: activate job form
+    steps:
+      - intent: ask_job
+      - action: apply_job_form
+      - active_loop: apply_job_form
+
+  - rule: submit job form
+    condition:
+      - active_loop: apply_job_form
+    steps:
+      - action: apply_job_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_job_form
+
 
 
 

@@ -79,6 +79,18 @@ forms:
       - type: from_text
     order:
       - type: from_text
+  
+  apply_job_form:
+    job_id:
+      - type: from_text
+    resume_link:
+      - type: from_text
+    cover_letter:
+      - type: from_text
+    portfolio:
+      - type: from_text
+    email:
+      - type: from_text
     
 
 
@@ -128,6 +140,16 @@ slots:
     type: text
   order:
     type: text
+  job_id:
+    type: text
+  resume_link:
+    type: text
+  cover_letter:
+    type: text
+  portfolio:
+    type: text
+  email:
+    type: text
 
 actions:
   - action_show_time
@@ -141,6 +163,7 @@ actions:
   - action_warehouse
   - action_recent_orders
   - action_order_product
+  - action_job_form
   - ask_budweiser
   - ask_order_product
   - ask_corona
@@ -201,8 +224,8 @@ responses:
   utter_faq/ask_operate:
     - text: "We have operations in more than *50 countries worldwide* and a presence in virtually every major beer market. We are organized in *9 geographical Zones* to maximize growth opportunities.\nWe benefit from a geographically diversified global platform. The stability and strength of developed markets balances the growth opportunities of developing markets. We have a strong presence in key emerging regions with strong growth prospects such as Asia, Central and South America, and Africa."
 
-  utter_faq/ask_job:
-    - text: "Thank you for showing interest in abinbev. Please visit the careers section https://www.ab-inbev.com/careers/ of our website for further information on job opportunities."
+  # utter_faq/ask_job:
+  #   - text: "Thank you for showing interest in abinbev. Please visit the careers section https://www.ab-inbev.com/careers/ of our website for further information on job opportunities."
 
   utter_ask_search_prod_choice:
     - text: "Enter your choice: \n1 - search via name \n2 - search via price \n3 - search via alchohal content"
@@ -266,11 +289,7 @@ responses:
     - text: "How do you want to get the recent orders?\n1 - latest 5 orders\n2 - latest 20 orders\n3 - by date\n4 - by month"
 
   utter_ask_recent_orders_value:
-    - text: "Please enter the value for above choice"
-  
-  
-  
-  
+    - text: "Please enter the value for above choice" 
   
   utter_ask_type_of_payment:
     - text: "Choose your preferred payment choice.\n1->Cash on Delivery(COD)\n2->Online Transaction"
@@ -278,11 +297,27 @@ responses:
   utter_ask_order_subject:
     - text: "Please enter the subject for your order"
   
-  
   utter_ask_order:
     - text: "Please enter the details of your order"
 
-  
+  utter_ask_job_id:
+    - text: "Mention the Job ID for which your are applying.\nTIP: You can find out the job id at https://www.ab-inbev.com/careers/"
+
+  utter_ask_resume_link:
+    - text: "Type your Resume Link/URL"
+
+  utter_ask_cover_letter:
+    - text: "Write your Cover Letter or paste a link"
+
+  utter_ask_portfolio:
+    - text: "Enter your portfolio URL preferably (github/linkedIn/website/Behance/Dribbble)"
+
+  utter_ask_email:
+    - text: "Enter your contact Email address"
+
+
+
+    
   
   
   utter_ask_budweiser:
