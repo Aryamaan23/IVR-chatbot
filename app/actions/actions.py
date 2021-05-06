@@ -896,3 +896,57 @@ class ActionWarehouse(Action):
         dispatcher.utter_message(text=f"{a}")
 
         return [AllSlotsReset()]
+
+
+class ActionOrder(Action):
+    def name(self) -> Text:
+        return "action_order_product"
+
+    def run(
+        self,
+        dispatcher,
+        tracker: Tracker,
+        domain: "DomainDict",
+    ) -> List[Dict[Text, Any]]:
+
+        mode=tracker.get_slot("type_of_payment")
+
+        if mode=="COD":
+                
+            email="vendor@abinev.in"
+            SendEmail23(
+                "ankithans1947@gmail.com",
+                tracker.get_slot("order_subject"),
+                tracker.get_slot("order")
+            )
+            SendEmail23(
+                "pandeyaryamaan@gmail.com",
+                tracker.get_slot("order_subject"),
+                tracker.get_slot("order")
+            )
+            dispatcher.utter_message(
+                "Thanks for placing the order. We have sent your order details to {}".format(email))
+            return [AllSlotsReset()]
+
+
+def SendEmail23(toaddr, subject, message):
+    fromaddr = "aryamaan23111101@gmail.com"
+    msg = MIMEMultipart()
+
+    msg['From'] = fromaddr
+    msg['To'] = toaddr
+    msg['Subject'] = subject
+    body = message
+    msg.attach(MIMEText(body, 'plain'))
+
+    s = smtplib.SMTP('smtp.gmail.com', 587)
+    s.starttls()
+
+    try:
+        s.login(fromaddr, "Vandana@123")
+        text = msg.as_string()
+        s.sendmail(fromaddr, toaddr, text)
+    except:
+        print("An Error occured while sending email.")
+    finally:
+        s.quit()

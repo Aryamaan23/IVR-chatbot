@@ -15,6 +15,7 @@ intents:
   - beer_offers
   - mail_signups
   - warehouse_products
+  - order_product
 
 forms:
   search_form:
@@ -65,6 +66,17 @@ forms:
     id_of_product:
       - type: from_text
 
+  order_form:
+    type_of_payment:
+      - type: from_text
+    order_subject:
+      - type: from_text
+    order:
+      - type: from_text
+    
+
+
+
 slots:
   search_prod_choice:
     type: text
@@ -100,6 +112,12 @@ slots:
     type: text
   id_of_product:
     type: text
+  type_of_payment:
+    type: text
+  order_subject:
+    type: text
+  order:
+    type: text
 
 actions:
   - action_show_time
@@ -111,7 +129,9 @@ actions:
   - action_discount_status
   - action_mail_signups
   - action_warehouse
+  - action_order_product
   - ask_budweiser
+  - ask_order_product
   - ask_corona
   - ask_stella_artois
   - ask_aguila
@@ -231,6 +251,20 @@ responses:
   utter_ask_id_of_product:
     - text: "Please enter the unique id of the desired product,in order to ensure that you are employee.\nAfter entering the unique id you will be told the location of product in warehouse."
 
+  
+  utter_ask_type_of_payment:
+    - text: "Choose your preferred payment choice.\n1->Cash on Delivery(COD)\n2->Online Transaction"
+  
+  utter_ask_order_subject:
+    - text: "Please enter the subject for your order"
+  
+  
+  utter_ask_order:
+    - text: "Please enter the details of your order"
+
+  
+  
+  
   utter_ask_budweiser:
     - text: "The yeast cells used to brew every bottle of our American-style lager are directly descended from the original culture used by founder Adolphus Busch.For more information, go to  https://www.budweiser.com"
       image: "https://www.ab-inbev.com/content/dam/abinbev/our-brands/our-beer/desktop/beer-cards/Budweiser_Card.png"
