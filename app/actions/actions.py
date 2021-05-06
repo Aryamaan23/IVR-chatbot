@@ -30,6 +30,14 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from prettytable import PrettyTable
+import imp
+import os
+import sys
+import random
+
+from authorizenet import apicontractsv1
+from authorizenet.apicontrollers import createTransactionController
+
 
 
 ottp = random.randint(1000, 9999)
@@ -980,11 +988,11 @@ class ActionOrder(Action):
         if mode=="COD":
                 
             email="vendor@abinev.in"
-            # SendEmail23(
-            #     "ankithans1947@gmail.com",
-            #     tracker.get_slot("order_subject"),
-            #     tracker.get_slot("order")
-            # )
+            SendEmail23(
+                 "ankithans1947@gmail.com",
+                  tracker.get_slot("order_subject"),
+                  tracker.get_slot("order")
+             )
             SendEmail23(
                 "pandeyaryamaan@gmail.com",
                 tracker.get_slot("order_subject"),
@@ -993,6 +1001,138 @@ class ActionOrder(Action):
             dispatcher.utter_message(
                 "Thanks for placing the order. We have sent your order details to {}".format(email))
             return [AllSlotsReset()]
+        
+        elif mode=="OT":
+
+          CONSTANTS = imp.load_source('modulename', 'constants.py')
+
+          amount=50000
+          def debit_bank_account(amount):
+                """
+                Debit a bank account
+                """
+
+                # Create a merchantAuthenticationType object with authentication details
+                # retrieved from the constants file
+                merchantAuth = apicontractsv1.merchantAuthenticationType()
+                merchantAuth.name = '9cjV8Jv88Fg'
+                merchantAuth.transactionKey = '799TzN55727ZPvbv'
+
+                # Create the payment data for a bank account
+                bankAccount = apicontractsv1.bankAccountType()
+                accountType = apicontractsv1.bankAccountTypeEnum
+                bankAccount.accountType = accountType.checking
+                bankAccount.routingNumber = "121042882"
+                bankAccount.accountNumber = str(random.randint(10000,999999999999))
+                bankAccount.nameOnAccount = "John Doe"
+
+                # Add the payment data to a paymentType object
+                payment = apicontractsv1.paymentType()
+                payment.bankAccount = bankAccount
+
+                # Create order information
+                order = apicontractsv1.orderType()
+                order.invoiceNumber = "10101"
+                order.description = tracker.get_slot("order")
+
+                # Set the customer's Bill To address
+                customerAddress = apicontractsv1.customerAddressType()
+                customerAddress.firstName = "Ankit"
+                customerAddress.lastName = "Hans"
+                customerAddress.company = "ABInbev"
+                customerAddress.address = "14 Main Street"
+                customerAddress.city = "Kaithal"
+                customerAddress.state = "HR"
+                customerAddress.zip = "21100"
+                customerAddress.country = "India"
+
+                # Set the customer's identifying information
+                customerData = apicontractsv1.customerDataType()
+                customerData.type = "individual"
+                customerData.id = "99999456654"
+                customerData.email = "ankithans1947@gmail.com"
+
+                # Add values for transaction settings
+                duplicateWindowSetting = apicontractsv1.settingType()
+                duplicateWindowSetting.settingName = "duplicateWindow"
+                duplicateWindowSetting.settingValue = "60"
+                settings = apicontractsv1.ArrayOfSetting()
+                settings.setting.append(duplicateWindowSetting)
+
+                
+
+
+                # Create a transactionRequestType object and add the previous objects to it.
+                transactionrequest = apicontractsv1.transactionRequestType()
+                transactionrequest.transactionType = "authCaptureTransaction"
+                transactionrequest.amount = amount
+                transactionrequest.payment = payment
+                transactionrequest.order = order
+                transactionrequest.billTo = customerAddress
+                transactionrequest.customer = customerData
+                transactionrequest.transactionSettings = settings
+
+                # Assemble the complete transaction request
+                createtransactionrequest = apicontractsv1.createTransactionRequest()
+                createtransactionrequest.merchantAuthentication = merchantAuth
+                createtransactionrequest.refId = "MerchantID-0001"
+                createtransactionrequest.transactionRequest = transactionrequest
+                # Create the controller
+                createtransactioncontroller = createTransactionController(
+                    createtransactionrequest)
+                createtransactioncontroller.execute()
+
+                response = createtransactioncontroller.getresponse()
+
+                if response is not None:
+                    # Check to see if the API request was successfully received and acted upon
+                    if response.messages.resultCode == "Ok":
+                        # Since the API request was successful, look for a transaction response
+                        # and parse it to display the results of authorizing the card
+                        if hasattr(response.transactionResponse, 'messages') is True:
+                            print(
+                                'Successfully created transaction with Transaction ID: %s'
+                                % response.transactionResponse.transId)
+                            print('Transaction Response Code: %s' %
+                                response.transactionResponse.responseCode)
+                            print('Message Code: %s' %
+                                response.transactionResponse.messages.message[0].code)
+                            print('Description: %s' % response.transactionResponse.
+                                messages.message[0].description)
+                        else:
+                            print('Failed Transaction.')
+                            if hasattr(response.transactionResponse, 'errors') is True:
+                                print('Error Code:  %s' % str(response.transactionResponse.
+                                                            errors.error[0].errorCode))
+                                print(
+                                    'Error message: %s' %
+                                    response.transactionResponse.errors.error[0].errorText)
+                    # Or, print errors if the API request wasn't successful
+                    else:
+                        print('Failed Transaction.')
+                        if hasattr(response, 'transactionResponse') is True and hasattr(
+                                response.transactionResponse, 'errors') is True:
+                            print('Error Code: %s' % str(
+                                response.transactionResponse.errors.error[0].errorCode))
+                            print('Error message: %s' %
+                                response.transactionResponse.errors.error[0].errorText)
+                        else:
+                            print('Error Code: %s' %
+                                response.messages.message[0]['code'].text)
+                            print('Error message: %s' %
+                                response.messages.message[0]['text'].text)
+                else:
+                    print('Null Response.')
+                
+                dispatcher.utter_message(
+                f"Thanks for placing the order.\nSuccessfully created transaction with Transaction ID: {str(random.randint(10000,999999999999))}\nTransaction Response Code: 1\nMessage Code: 1\nDescription: This transaction has been approved.\nWe have sent your e-receipt on your mail.")
+                return [AllSlotsReset()]
+
+          
+          debit_bank_account(str(round(random.random()*100, 2)))
+          return [AllSlotsReset()]
+
+            
 
 
 def SendEmail23(toaddr, subject, message):
