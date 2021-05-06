@@ -119,7 +119,7 @@ nlu:
       - geographical locations of abinbev?
       - operations
 
-  - intent: faq/ask_job
+  - intent: ask_job
     examples: |
       - job openings in abinbev?
       - apply for the job in abinbev?
@@ -136,6 +136,8 @@ nlu:
       - I want to work at abinbev
       - any work opportunity at abinbev
       - open for work at abinbev
+      - Are there any open positions?
+
 
   - intent: give_time
     examples: |

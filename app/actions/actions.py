@@ -1016,3 +1016,19 @@ def SendEmail23(toaddr, subject, message):
         print("An Error occured while sending email.")
     finally:
         s.quit()
+
+
+
+class ActionJobForm(Action):
+
+    def name(self) -> Text:
+        return "action_job_form"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        mail_body = "Job ID: {tracker.get_slot('job_id')}\nResume: {tracker.get_slot('resume_link')}\nCover Letter: {tracker.get_slot(cover_letter)}\nPortfolio: {tracker.get_slot('portfolio')}\nContact: {tracker.get_slot('email')}"
+        dispatcher.utter_message("Thank you so much for applying to ABInBev! Please know that your application has been received and a member of our team will be reviewing it soon.\nIf your application seems like a good fit for the position, then a member of our team will be in contact with you.")
+
+        return [AllSlotsReset()]
