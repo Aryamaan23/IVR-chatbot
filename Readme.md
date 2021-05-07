@@ -8,26 +8,23 @@
 
 ## 🎯 Features
 
-- Track Payment Status by orderID
-- Added Authorization security via OTP
-- Increment Collaboration with suppliers and hence increase profits
-- Explore Career opportunities in ABInBev
-- Report any issue related to website, quality of product, staff / agent behaviour or feedback
-- Schedule Appointment / Call regarding your order
-- mail-list signups with the willingness of user and store the information of users in a SQL DB
-- Multi Chat Channel like sms, chat and email (non IVR Examples)
-- Recommending Products and services via querying name, price, alcohol content etc
-- Get Latest ongoing offers on products
-- Responsive Interactive Answers to Frequently asked questions (FAQ) and contact details of department based on the type of query
-- Automatically redirect feedback to the respective department based on text analysis.Based on the text analysis analyzing the current market demand
-- 10 minutes database session for each user
-- Auto destroy stored messages within a 10-minute session
-- Order a product using chatbot and get e-receipt (Procurement)
-- Get location of any product in warehouse
-- Supplier onboarding
-- Screening a candidate seeking for a job
-- Know the location of your package (delivery details)
-- Get complete information about any beer available at ABInbev
+- Track `Payment Status` by orderID
+- Added `Authorization` security via OTP
+- Increment `Collaboration` with suppliers and hence increase profits
+- Explore `career opportunities` and `screening` of candidate seeking for a job at ABInBev
+- Report any issue related to website, quality of product, staff / agent behaviour or `feedback`
+- Schedule `Appointment/Call` regarding any queries like order, quality of product, delivery, payment issues etc.
+- `mail-list` signups with the willingness of user inorder to increase the customer engagements.
+- `Multi Chat Channel` like sms, chat (`Telegram, Whatsapp, Slack, Facebook Messenger`) and email (non IVR Examples)
+- `Recommending Products` and services via querying name, price, alcohol content etc
+- Get Latest ongoing `offers` on products
+- Responsive Interactive Answers to `Frequently asked questions (FAQ)` and contact details of department based on the type of query
+- Resetting of database session for each user after some interval of time
+- Order a product using chatbot and get `e-receipt (Procurement)`
+- Get `location` of any product in `warehouse`
+- `Supplier onboarding`
+- Know the location of your package `(delivery details)`
+- Get complete information about `any beer` with image available at ABInbev
 
 
 ## 🤖 How we built it
