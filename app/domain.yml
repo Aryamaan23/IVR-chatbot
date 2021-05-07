@@ -91,6 +91,18 @@ forms:
       - type: from_text
     email:
       - type: from_text
+  
+  supplier_onboarding_form:
+    vendor_name:
+      - type: from_text
+    vendor_licenses:
+      - type: from_text
+    credit_score:
+      - type: from_text
+    tax_info:
+      - type: from_text
+    vendor_contact:
+      - type: from_text
     
 
 
@@ -150,6 +162,16 @@ slots:
     type: text
   email:
     type: text
+  vendor_name:
+    type: text
+  vendor_licenses:
+    type: text
+  credit_score:
+    type: text
+  tax_info:
+    type: text
+  vendor_contact:
+    type: text
 
 actions:
   - action_show_time
@@ -164,6 +186,7 @@ actions:
   - action_recent_orders
   - action_order_product
   - action_job_form
+  - action_supplier_onboard
   - ask_budweiser
   - ask_order_product
   - ask_corona
@@ -240,8 +263,8 @@ responses:
   utter_ask_order_id:
     - text: "Enter the order ID of the product"
 
-  utter_collab:
-    - text: "We are always open for collaborations, you can contact us here https://collab@abinbev.com"
+  # utter_collab:
+  #   - text: "We are always open for collaborations, you can contact us here https://collab@abinbev.com"
 
   utter_ask_phone_number:
     - text: "Please enter your phone number. An OTP will be sent to your phone to verfiy you!"
@@ -314,6 +337,23 @@ responses:
 
   utter_ask_email:
     - text: "Enter your contact Email address"
+
+  utter_ask_vendor_name:
+    - text: "Enter Vendor's name"
+
+  utter_ask_vendor_licenses:
+    - text: "do you have any currently active professional certification or a state or industry license? If yes then list them here"
+
+  utter_ask_credit_score:
+    - text: "what is your credit score?"
+
+  utter_ask_tax_info:
+    - text: "Enter the tax information about *{vendor_name}*"
+
+  utter_ask_vendor_contact:
+    - text: "How can we contact you?"
+
+
 
 
 

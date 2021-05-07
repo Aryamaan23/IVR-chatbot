@@ -48,10 +48,10 @@ rules:
           - requested_slot: null
       - action: action_payment_status
 
-  - rule: collaboration with abinbev
-    steps:
-      - intent: collab
-      - action: utter_collab
+  # - rule: collaboration with abinbev
+  #   steps:
+  #     - intent: collab
+  #     - action: utter_collab
 
   # - rule: activate auth form
   #   steps:
@@ -132,6 +132,23 @@ rules:
       - slot_was_set:
           - requested_slot: null
       - action: action_job_form
+
+
+  - rule: activate supplier onboarding form
+    steps:
+      - intent: collab
+      - action: supplier_onboarding_form
+      - active_loop: supplier_onboarding_form
+
+  - rule: submit supplier onboarding form
+    condition:
+      - active_loop: supplier_onboarding_form
+    steps:
+      - action: supplier_onboarding_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_supplier_onboard
 
 
 

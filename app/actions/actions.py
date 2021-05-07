@@ -1204,3 +1204,28 @@ def SendEmail1947(toaddr,message):
         print("An Error occured while sending email.")
     finally:
         s.quit()
+
+
+class ActionSupplierOnboardingForm(Action):
+
+    def name(self) -> Text:
+        return "action_supplier_onboard"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+
+        mail_body = f"Vendor Name: {tracker.get_slot('vendor_name')}\nVendor Licenses: {tracker.get_slot('vendor_licenses')}\nCredit Score: {tracker.get_slot('credit_score')}\nTax Info: {tracker.get_slot('tax_info')}\nContact: {tracker.get_slot('vendor_contact')}"
+        SendEmail1947(
+                 "ankithans1947@gmail.com",
+                 mail_body
+             )
+        # SendEmail1947(
+        #         "pandeyaryamaan@gmail.com",
+        #         mail_body
+        #     )
+        
+        dispatcher.utter_message("We appreciate that you want to become our supplier. We have recieved your application.\n\nOur team will be in your touch very soon.\n\nFind more information at https://www.ab-inbev.com/suppliers/supplier-partnerships/")
+
+        return [AllSlotsReset()]
