@@ -8,7 +8,27 @@
 
 ## 🎯 Features
 
-- 
+- Track Payment Status by orderID
+- Added Authorization security via OTP
+- Increment Collaboration with suppliers and hence increase profits
+- Explore Career opportunities in ABInBev
+- Report any issue related to website, quality of product, staff / agent behaviour or feedback
+- Schedule Appointment / Call regarding your order
+- mail-list signups with the willingness of user and store the information of users in a SQL DB
+- Multi Chat Channel like sms, chat and email (non IVR Examples)
+- Recommending Products and services via querying name, price, alcohol content etc
+- Get Latest ongoing offers on products
+- Responsive Interactive Answers to Frequently asked questions (FAQ) and contact details of department based on the type of query
+- Automatically redirect feedback to the respective department based on text analysis.Based on the text analysis analyzing the current market demand
+- 10 minutes database session for each user
+- Auto destroy stored messages within a 10-minute session
+- Order a product using chatbot and get e-receipt (Procurement)
+- Get location of any product in warehouse
+- Supplier onboarding
+- Screening a candidate seeking for a job
+- Know the location of your package (delivery details)
+- Get complete information about any beer available at ABInbev
+
 
 ## 🤖 How we built it
 
