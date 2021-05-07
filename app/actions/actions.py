@@ -1229,3 +1229,4 @@ class ActionSupplierOnboardingForm(Action):
         dispatcher.utter_message("We appreciate that you want to become our supplier. We have recieved your application.\n\nOur team will be in your touch very soon.\n\nFind more information at https://www.ab-inbev.com/suppliers/supplier-partnerships/")
 
         return [AllSlotsReset()]
+        
