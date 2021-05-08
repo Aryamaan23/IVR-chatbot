@@ -94,6 +94,43 @@ export default function Input({ onSend }) {
               <option>Choose Language </option>
               <option>en-US</option>
               <option>hi-IN</option>
+              <option>ar-SA</option>
+              <option>cs-CZ</option>
+              <option>da-DK</option>
+              <option>de-DE</option>
+              <option>el-GR</option>
+              <option>en-AU</option>
+              <option>en-GB</option>
+              <option>en-IE</option>
+              <option>en-ZA</option>
+              <option>es-ES</option>
+              <option>es-MX</option>
+              <option>fi-FI</option>
+              <option>fr-CA</option>
+              <option>fr-FR</option>
+              <option>he-IL</option>
+              <option>hu-HU</option>
+              <option>id-ID</option>
+              <option>it-IT</option>
+              <option>ja-JP</option>
+              <option>ko-KR</option>
+              <option>nl-BE</option>
+              <option>nl-NL</option>
+              <option>no-NO</option>
+              <option>pl-PL</option>
+              <option>pt-BR</option>
+              <option>pt-PT</option>
+              <option>ro-RO</option>
+              <option>ru-RU</option>
+              <option>sk-SK</option>
+              <option>sv-SE</option>
+              <option>th-TH</option>
+              <option>tr-TR</option>
+              <option>zh-CN</option>
+              <option>zh-HK</option>
+              <option>zh-TW</option>
+
+
             </select>
           </div>
 
