@@ -12,8 +12,9 @@ fake.name()
 
 key ='d908ec2a841244e0892ac9b12db8a453' # get api key from:  https://opencagedata.com
 geocoder = OpenCageGeocode(key)
-a=input()
-b=input()
+cities = ["kaithal", "Alahabad", "mumbai", "chennai", "delhi", "lucknow", "panipat", "hisar", "ranchi", "jaipur", "rohtak", "kolkata", "bangalore", "hyderabad", "raipur", "ghaziabad", "indore", "bhopal" ]
+a = random.choice(cities)
+b= "India"
 x=a,b
 print(x)
 ab=x[0]
@@ -41,13 +42,4 @@ a=fake.address()
 print(a)
 days = random.randint(4, 10)
 print(f"Your order is ready to dispatch from {a} "+ "and will be delivered to your address which is " +location.address + f" within {days} days")
-
-
-"""
-a=str(fake.address())
-print(str(fake.address()))
-location= geolocator.geocode({a})
-#print(location23.address)
-#print(results)
-"""
 
