@@ -16,6 +16,7 @@ intents:
   - mail_signups
   - warehouse_products
   - order_product
+  - track_order_shippment
 
 forms:
   search_form:
@@ -101,6 +102,10 @@ forms:
       - type: from_text
     vendor_contact:
       - type: from_text
+
+  track_form:
+    order_id23:
+      - type: from_text
     
 
 
@@ -168,6 +173,8 @@ slots:
     type: text
   vendor_contact:
     type: text
+  order_id23:
+    type: text
 
 actions:
   - action_show_time
@@ -184,6 +191,7 @@ actions:
   - action_job_form
   - action_supplier_onboard
   - validate_recent_orders_form
+  - action_track
   - ask_budweiser
   - ask_order_product
   - ask_corona
@@ -347,13 +355,10 @@ responses:
   utter_ask_vendor_contact:
     - text: "How can we contact you?"
 
+  utter_ask_order_id23:
+    - text: "Please type your order ID."
 
 
-
-
-    
-  
-  
   utter_ask_budweiser:
     - text: "The yeast cells used to brew every bottle of our American-style lager are directly descended from the original culture used by founder Adolphus Busch.For more information, go to  https://www.budweiser.com"
       image: "https://www.ab-inbev.com/content/dam/abinbev/our-brands/our-beer/desktop/beer-cards/Budweiser_Card.png"

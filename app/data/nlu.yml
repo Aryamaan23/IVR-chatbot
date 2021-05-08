@@ -163,15 +163,13 @@ nlu:
 
   - intent: payment_status
     examples: |
-      - Payment status
-      - tell me about the payment status
-      - what is the status of my order
+      - Payment report
+      - tell me about the payment report
       - payment done with the order id
       - have I paid for the product
       - should I pay now?
       - when to pay for order
-      - order status
-      - check my payment status
+      - check my payment report
       - payment of order done
   
   - intent: grab_recent_orders
@@ -256,10 +254,13 @@ nlu:
       - I want to get a prdouct
 
 
-  - intent: ask_remind_call
+  - intent: track_order_shippment
     examples: |
-      - remind me to call [Aryamaan](name: Aryamaan)
-      - remind me to call [Rahul](name: Rahul)
+      - I want to track my order
+      - I want to track my shippment
+      - Where has my order reached?
+      - Is my order ready to dispatch?
+      - What is the current status of dispatchment?
 
   - intent: ask_budweiser
     examples: |

@@ -366,3 +366,20 @@ rules:
       - slot_was_set:
           - requested_slot: null
       - action: action_order_product
+
+
+  - rule: activate tracking order
+    steps:
+      - intent: track_order_shippment
+      - action: track_form
+      - active_loop: track_form
+
+  - rule: submit tracking order
+    condition:
+      - active_loop: track_form
+    steps:
+      - action: track_form
+      - active_loop: null
+      - slot_was_set:
+          - requested_slot: null
+      - action: action_track
