@@ -8,27 +8,32 @@
 
 ## 🎯 Features
 
+### Consumers
 - Track `Payment Status` by orderID
 - Added `Authorization` security via OTP
-- Increment `Collaboration` with suppliers and hence increase profits
 - Explore `career opportunities` and `screening` of candidate seeking for a job at ABInBev
 - Report any issue related to website, quality of product, staff / agent behaviour or `feedback`
 - Schedule `Appointment/Call` regarding any queries like order, quality of product, delivery, payment issues etc.
-- `mail-list` signups with the willingness of user inorder to increase the customer engagements.
-- `Multi Chat Channel` like sms, chat (`Telegram, Whatsapp, Slack, Facebook Messenger`) and email (non IVR Examples)
+- `mail-list` signups with the willingness of user inorder to increase the customer engagements
 - `Recommending Products` and services via querying name, price, alcohol content etc
 - Get Latest ongoing `offers` on products
 - Responsive Interactive Answers to `Frequently asked questions (FAQ)` and contact details of department based on the type of query
-- Resetting of database session for each user after some interval of time
 - Order a product using chatbot and get `e-receipt (Procurement)`
+- Know the location of your package `(delivery details)`
+
+### Vendors
+- Increment `Collaboration` with suppliers and hence increase profits
+- Grab the `recent orders` by entering the date or month
+- Resetting of database session for each user after some interval of time
 - Get `location` of any product in `warehouse`
 - `Supplier onboarding`
-- Know the location of your package `(delivery details)`
 - Get complete information about `any beer` with image available at ABInbev
 
+### Integrations
+- `Multilingual Voice support` using speech to text and text to speech API's
+- `Multi Chat Channel` like sms, chat (`Telegram, Whatsapp, Slack, Facebook Messenger`) and email (non IVR Examples)
 
 ## 🤖 How we built it
-
 ![Flow](mockups/flow4.png)
 
 ## 🙈 Mockups
