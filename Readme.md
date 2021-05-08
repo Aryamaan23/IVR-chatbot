@@ -68,7 +68,7 @@ cd IVR-web-eng
 ```
 
 ## 💻 Tech Stack & dependencies
-Python, RASA, SQL, gTTS, Twilio, Google Calender API, Google Translator, playsound, prettytable, PyAudio, requests, SpeechRecognition, android, HTML
+Python, RASA, SQL, gTTS, Twilio, Google Calender API, Google Translator, playsound, prettytable, PyAudio, requests, SpeechRecognition, android, HTML, geopy, opencage
 
 ## made with 💕 by:
 - [Ankit Hans](https://github.com/ankithans)
