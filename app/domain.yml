@@ -67,8 +67,6 @@ forms:
       - type: from_text
   
   recent_orders_form:
-    recent_orders_choice: # 1, 2 for get orders by date & get orders by month respectively
-      - type: from_text
     recent_orders_value:
       - type: from_text
 
@@ -142,8 +140,6 @@ slots:
     type: text
   id_of_product:
     type: text
-  recent_orders_choice:
-    type: text
   recent_orders_value:
     type: text
   type_of_payment:
@@ -187,6 +183,7 @@ actions:
   - action_order_product
   - action_job_form
   - action_supplier_onboard
+  - validate_recent_orders_form
   - ask_budweiser
   - ask_order_product
   - ask_corona
@@ -308,11 +305,8 @@ responses:
   utter_ask_id_of_product:
     - text: "Please enter the unique id of the desired product,in order to ensure that you are employee.\nAfter entering the unique id you will be told the location of product in warehouse."
 
-  utter_ask_recent_orders_choice:
-    - text: "How do you want to get the recent orders?\n1 - latest 5 orders\n2 - latest 20 orders\n3 - by date\n4 - by month"
-
   utter_ask_recent_orders_value:
-    - text: "Please enter the value for above choice" 
+    - text: "Enter a date or month to get orders.\nIf date is selected specify in YYYY-MM-DD format or if month is selected specify in 01, 02, 03, 04..." 
   
   utter_ask_type_of_payment:
     - text: "Choose your preferred payment choice.\n1->Cash on Delivery(COD)\n2->Online Transaction"

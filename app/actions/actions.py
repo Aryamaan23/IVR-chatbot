@@ -922,54 +922,129 @@ class ActionRecentOrders(Action):
                 "id": "1",
                 "payment_status": True,
                 "price": 4553,
-                "customer_contact": "9988776676"
+                "customer_contact": "9988776676",
+                "date": "2021/05/27",
             },
             {
                 "id": "2",
                 "payment_status": True,
                 "price": 4553,
-                "customer_contact": "9988776676"
+                "customer_contact": "9988776676",
+                "date": "2021/04/23",
             },
             {
                 "id": "3",
                 "payment_status": True,
                 "price": 4553,
-                "customer_contact": "9988776676"
+                "customer_contact": "9988776676",
+                "date": "2021/04/23",
             },
             {
                 "id": "4",
                 "payment_status": True,
                 "price": 4553,
-                "customer_contact": "9988776676"
+                "customer_contact": "9988776676",
+                "date": "2021/04/23",
             },
             {
                 "id": "5",
                 "payment_status": True,
                 "price": 4553,
-                "customer_contact": "9988776676"
+                "customer_contact": "9988776676",
+                "date": "2021/04/23",
             },
             {
                 "id": "6",
                 "payment_status": True,
                 "price": 4553,
-                "customer_contact": "9988776676"
+                "customer_contact": "9988776676",
+                "date": "2021/04/23",
+
             },
             {
                 "id": "7",
                 "payment_status": True,
                 "price": 4553,
-                "customer_contact": "9988776676"
-            }
+                "customer_contact": "9988776676",
+                "date": "2021/04/23",
+            },
+            {
+                "id": "8",
+                "payment_status": True,
+                "price": 4553,
+                "customer_contact": "9988776676",
+                "date": "2021/05/27",
+            },
+            {
+                "id": "9",
+                "payment_status": True,
+                "price": 4553,
+                "customer_contact": "9988776676",
+                "date": "2021/05/27",
+            },
+            {
+                "id": "10",
+                "payment_status": True,
+                "price": 4553,
+                "customer_contact": "9988776676",
+                "date": "2021/05/27",
+            },
+            {
+                "id": "11",
+                "payment_status": True,
+                "price": 4553,
+                "customer_contact": "9988776676",
+                "date": "2021/05/27",
+            },
         ]
 
-        t = PrettyTable(['Id', 'Payment', "Price", 'Contact'])
+        date = tracker.get_slot("recent_orders_value")
+        t = PrettyTable(['Id', 'Date/Month', 'Payment', "Price", 'Contact'])
 
-        for order in orders:
-            t.add_row([order["id"], order["payment_status"], order["price"], order["customer_contact"]])
+        def phn():
+            n = '0000000000'
+            while '9' in n[3:6] or n[3:6]=='000' or n[6]==n[7]==n[8]==n[9]:
+                n = str(random.randint(10**9, 10**10-1))
+            return n[:3] + '-' + n[3:6] + '-' + n[6:]
+
+        for order in range(random.randint(3, 38)):
+            ph = phn()
+            choice = random.choice([True, False])
+            pric =  random.randint(456, 10000)
+            
+            t.add_row([random.randint(2231, 9999), date, choice, pric, ph])
 
         dispatcher.utter_message(text=f"{t}")
 
         return [AllSlotsReset()]
+
+
+class ValidateRecentOrdersForm(FormValidationAction):
+
+    def name(self) -> Text:
+        return "validate_recent_orders_form"
+
+    def validate_recent_orders_value(
+        self,
+        slot_value: Any,
+        dispatcher: CollectingDispatcher,
+        tracker: Tracker,
+        domain: DomainDict,
+    ) -> Dict[Text, Any]:
+
+        mon = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]
+
+        dat = tracker.get_slot("recent_orders_value")
+        if dat in mon:
+            return {'recent_orders_value': slot_value}
+
+        try:
+            datetime.datetime.strptime(dat, '%Y-%m-%d')
+            return {'recent_orders_value': slot_value}
+        except:
+            dispatcher.utter_message("Entered date format is incorrect!")
+            return {'recent_orders_value': None}
+
 
 
 class ActionOrder(Action):
