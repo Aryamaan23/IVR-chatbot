@@ -4,12 +4,12 @@
 .chatbot {
   font-family: monospace;
   border-radius: 10px;
-  box-shadow: 12px 12px 12px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.15);
   background: #f5f8fb;
   text-align: center;
   display: flex;
   flex-flow: column;
-  width: 800px;
+  width: 750px;
   overflow: hidden;
   margin-left: 370px;
   padding-left: 10px;
