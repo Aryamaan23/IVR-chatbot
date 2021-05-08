@@ -30,9 +30,6 @@
 ## 🤖 How we built it
 
 ![Flow](mockups/flow4.png)
-![Flow](mockups/flow3.png)
-![Flow](mockups/flow2.png)
-![Flow](mockups/flow1.png)
 
 ## 🙈 Mockups
 
