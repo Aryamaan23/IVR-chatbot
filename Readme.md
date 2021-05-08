@@ -39,8 +39,7 @@
 ## 🙈 Mockups
 
 ### Multilingual Support
-<img src="https://github.com/Aryamaan23/IVR-chatbot/blob/main/mockups/web4.png"  > 
-<img src="https://github.com/Aryamaan23/IVR-chatbot/blob/main/mockups/web6.png" > 
+![Web Multiligual](mockups/web-1.png)
 
 ### Whatsapp
 ![whatsapp](mockups/whatsapp_club.png)
