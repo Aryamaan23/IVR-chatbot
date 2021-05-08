@@ -70,6 +70,19 @@ rasa run
 rasa run actions
 ```
 
+### Run Multilingual React Bot
+For Fastapi (backend) server
+```bash
+cd multilingual-api
+uvicorn main:app --reload
+```
+For react (frontend) app
+```bash
+cd IVR-multilingual-react
+npm install
+npm start
+```
+
 ### Run Voice bot in terminal
 ```bash
 cd IVR-terminal
