@@ -47,6 +47,9 @@
 ### Slack
 ![slack](mockups/slack_img.jpg)
 
+### Alexa
+![alexa](mockups/alexa.png)
+
 
 ## 👣 steps to run the project
 ### Run rasa and rasa action server
