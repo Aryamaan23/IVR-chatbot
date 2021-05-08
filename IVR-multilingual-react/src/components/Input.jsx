@@ -28,9 +28,6 @@ export default function Input({ onSend }) {
         setText(result)
     }
 
-    function refreshPage() {
-      window.location.reload(false);
-    }
 
     const options = [
       'en-US', 'hi-IN'
@@ -66,15 +63,17 @@ export default function Input({ onSend }) {
       </form>
     </div>
 
-    <Vocal
+    <div className="p-2">
+   
+    <div class="relative inline-flex">
+          <Vocal
             onStart={_onVocalStart}
             onResult={_onVocalResult}
-            // style={{width: 45, position: 'absolute', right: 50, top: 15}}
+            style={{width: 50,  }}
             lang={lang}
-        />
-    <div class="relative inline-flex">
+          />
             <svg
-              class="w-2 h-1 absolute top-0 right-0 m-4 pointer-events-none"
+              className="w-2 h-1 absolute top-0 right-0 m-4 pointer-events-none"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 412 232"
             >
@@ -89,13 +88,14 @@ export default function Input({ onSend }) {
                 setLanguage(e.target.value);
               }}
               onClick
-              class="border border-gray-300 rounded-full text-gray-600 h-8 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none"
+              className= "border border-gray-300 rounded-full text-gray-600 h-8 ml-5 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none"
             >
               <option>Choose Language </option>
               <option>en-US</option>
               <option>hi-IN</option>
             </select>
           </div>
+    </div>
 
     </div>
   );

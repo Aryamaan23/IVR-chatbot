@@ -13,15 +13,18 @@ const API = {
         }
       }).then((res)=> {
         console.log(res);
-          resolve(res.data[0])
-          if (res.data.length > 1)
+          if (res.data.length > 1){
+            resolve(res.data[0] + "\n" + res.data[1])
             resolve(res.data[1])
+          }
           
           if (res.data.length > 2)
-            resolve(res.data[2])
+            resolve(res.data[0] + "\n" + res.data[1] + "\n" + res.data[2])
 
           if (res.data.length > 3)
-            resolve(res.data[3])
+            resolve(res.data[0] + "\n" + res.data[1] + res.data[2] + res.data[3])
+          
+          resolve(res.data[0])
 
       }, (e) => {
         console.log(e);

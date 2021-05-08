@@ -4,13 +4,15 @@
 .chatbot {
   font-family: monospace;
   border-radius: 10px;
-  box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 12px 12px 12px 12px rgba(0, 0, 0, 0.15);
   background: #f5f8fb;
   text-align: center;
   display: flex;
   flex-flow: column;
-  width: 500px;
+  width: 800px;
   overflow: hidden;
+  margin-left: 370px;
+  padding-left: 10px;
 }
 
 .header {
@@ -25,7 +27,7 @@
 
 .messages {
   width: 100%;
-  height: 400px;
+  height: 600px;
   overflow: auto;
   display: flex;
   flex-direction: column;

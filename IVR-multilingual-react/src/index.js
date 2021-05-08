@@ -20,7 +20,7 @@ function Chatbot() {
       setMessages([
         <BotMessage
           key="0"
-          fetchMessage={async () => await API.GetChatbotResponse("hi")}
+          fetchMessage={() => "Hi, Welcome to ABInBev Bot"}
         />
       ]);
     }

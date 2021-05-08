@@ -15,7 +15,7 @@ export default function BotMessage({ fetchMessage }) {
 
   return (
     <div className="message-container">
-      <div className="bot-message">{isLoading ? "..." : message}</div>
+      <div className="bot-message whitespace-pre-wrap text-left">{isLoading ? "..." : message}</div>
     </div>
   );
 }
