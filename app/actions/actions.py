@@ -38,10 +38,20 @@ import random
 from authorizenet import apicontractsv1
 from authorizenet.apicontrollers import createTransactionController
 
+from opencage.geocoder import OpenCageGeocode
+from geopy.geocoders import Nominatim
+import math
+import pandas as pd
+from faker import Faker
+
 
 
 ottp = random.randint(1000, 9999)
 SCOPES = ['https://www.googleapis.com/auth/calendar']
+fake = Faker()
+
+key ='d908ec2a841244e0892ac9b12db8a453'
+geocoder = OpenCageGeocode(key)
 
 
 class ActionHelloWorld(Action):
@@ -1229,4 +1239,35 @@ class ActionSupplierOnboardingForm(Action):
         dispatcher.utter_message("We appreciate that you want to become our supplier. We have recieved your application.\n\nOur team will be in your touch very soon.\n\nFind more information at https://www.ab-inbev.com/suppliers/supplier-partnerships/")
 
         return [AllSlotsReset()]
+
+
+
+class ActionTrack(Action):
+
+    def name(self) -> Text:
+        return "action_track"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        
+        order_id=tracker.get_slot("order_id23")
+        cities = ["kaithal", "Alahabad", "mumbai", "chennai", "delhi", "lucknow", "panipat", "hisar", "ranchi", "jaipur", "rohtak", "kolkata", "bangalore", "hyderabad", "raipur", "ghaziabad", "indore", "bhopal" ]
+        a = random.choice(cities)
+        b= "India"
+        x=a,b
+        ab=x[0]
+        abc=x[1]
+        query =f'{ab},{abc}'
+        results =geocoder.geocode(query)
+        lat = results[0]['geometry']['lat']
+        lng = results[0]['geometry']['lng']
+        geolocator = Nominatim(user_agent="IVR-CHATBOT")
+        location = geolocator.reverse(f"{lat},{lng}")
+        a=fake.address()
+        days = random.randint(4, 10)
+        dispatcher.utter_message(text=f"Your order with order id:{order_id} is ready to dispatch from {a} "+ "and will be delivered to your address which is " +location.address + f" within {days} days")
+
+        return [AllSlotsReset()]
+
         
