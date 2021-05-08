@@ -39,7 +39,7 @@
 ## 🙈 Mockups
 
 ### Multilingual Support
-![Web Multiligual](mockups/web-1.png)
+![Web Multiligual](mockups/multilingual.jpg)
 
 ### Whatsapp
 ![whatsapp](mockups/whatsapp_club.png)
