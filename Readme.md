@@ -39,9 +39,8 @@
 ## 🙈 Mockups
 
 ### Multilingual Support
-<img src="https://github.com/Aryamaan23/IVR-chatbot/blob/main/mockups/web1.png" width="480">  <img src="https://github.com/Aryamaan23/IVR-chatbot/blob/main/mockups/web4.png" width="480" style="float:right"> 
-
-<img src="https://github.com/Aryamaan23/IVR-chatbot/blob/main/mockups/web5.png" width="480">  <img src="https://github.com/Aryamaan23/IVR-chatbot/blob/main/mockups/web6.png" width="480" style="float:right"> 
+<img src="https://github.com/Aryamaan23/IVR-chatbot/blob/main/mockups/web4.png"  > 
+<img src="https://github.com/Aryamaan23/IVR-chatbot/blob/main/mockups/web6.png" > 
 
 ### Whatsapp
 ![whatsapp](mockups/whatsapp_club.png)
