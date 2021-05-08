@@ -31,7 +31,7 @@
 
 ### Integrations
 - `Multilingual Voice support` using speech to text and text to speech API's
-- `Multi Chat Channel` like sms, chat (`Telegram, Whatsapp, Slack, Facebook Messenger`) and email (non IVR Examples)
+- `Multi Chat Channel` like sms, chat (`Telegram, Whatsapp, Slack, Facebook Messenger,Alexa`) and email (non IVR Examples)
 
 ## 🤖 How we built it
 ![Flow](mockups/flow4.png)
