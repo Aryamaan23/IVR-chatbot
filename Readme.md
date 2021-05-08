@@ -31,15 +31,19 @@
 
 ### Integrations
 - `Multilingual Voice support` using speech to text and text to speech API's
-- `Multi Chat Channel` like sms, chat (`Telegram, Whatsapp, Slack, Facebook Messenger,Alexa`) and email (non IVR Examples)
+- `Multi Chat Channel` like sms, chat (`Telegram, Whatsapp, Slack, Facebook Messenger, Alexa, Aimybox`) and email (non IVR Examples)
 
 ## 🤖 How we built it
 ![Flow](mockups/flow4.png)
 
 ## 🙈 Mockups
 
+### Text to Speech and Speech to Text
+![Web Chat](mockups/webchat_img.jpg)
+
 ### Multilingual Support
 ![Web Multiligual](mockups/multilingual.jpg)
+
 
 ### Whatsapp
 ![whatsapp](mockups/whatsapp_club.png)

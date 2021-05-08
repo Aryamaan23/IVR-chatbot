@@ -32,7 +32,8 @@ async def abinbev(obj: Obj):
 
     res = []
     for i in r.json():
-        bot_message = i['text']
+        if('text' in i):
+            bot_message = i['text']
         bot_message_lang = translator.translate(bot_message, obj.lang)
         res.append(bot_message_lang)
     return res
