@@ -73,12 +73,14 @@ rasa run actions
 ### Run Multilingual React Bot
 For Fastapi (backend) server
 ```bash
-cd multilingual-api
+cd IVR-multilingual
+cd api
 uvicorn main:app --reload
 ```
 For react (frontend) app
 ```bash
-cd IVR-multilingual-react
+cd IVR-multilingual
+cd frontend
 npm install
 npm start
 ```
