@@ -366,7 +366,7 @@ class ValidatePaymentForm(FormValidationAction):
 
         print("yoyoyoyoyoyoyoyoy")
         account_sid = "AC083274c578353fe67a0eaad634de69d8"
-        auth_token = "f631eddc42197d50a3b440dcd1bd1891"
+        auth_token = "1ef1f0fccd271b662db6d2a38f456df9"
         client = Client(account_sid, auth_token)
 
         message = client.messages \

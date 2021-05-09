@@ -6,6 +6,9 @@
 ## 💡 Solution
 > IVR chatbots can be a boon for the companies to manage their work processes easily and smoothly so we developed it. Companies can use it to improve their customer's experience, to generate more sales and build a deeper rapport with customers. They allow your customers to easily interact with your brand through stimulated conversations. It is capable of providing 24h service to their customers. For a good customer experience it provides instant and accurate results to the questions asked by users.
 
+---
+![ppt](mockups/gifppt.gif)
+
 ## 🎯 Features
 
 ### Consumers
