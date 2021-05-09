@@ -6,7 +6,11 @@
 ## 💡 Solution
 > IVR chatbots can be a boon for the companies to manage their work processes easily and smoothly so we developed it. Companies can use it to improve their customer's experience, to generate more sales and build a deeper rapport with customers. They allow your customers to easily interact with your brand through stimulated conversations. It is capable of providing 24h service to their customers. For a good customer experience it provides instant and accurate results to the questions asked by users.
 
----
+## ✨ Presentation
+- [PPT](https://www.canva.com/design/DAEd-OD4XEY/6KDX1GKeaSY6Ke1vZZpb7Q/view?utm_content=DAEd-OD4XEY&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
+- [Video Presentation](https://vimeo.com/547184353)
+
+
 ![ppt](mockups/gifppt.gif)
 
 ## 🎯 Features
@@ -101,7 +105,7 @@ cd IVR-web-eng
 ```
 
 ## 💻 Tech Stack & dependencies
-Python, RASA, SQL, gTTS, Twilio, Google Calender API, Google Translator, playsound, prettytable, PyAudio, requests, SpeechRecognition, android, HTML, geopy, opencage
+Python, RASA, SQL, gTTS, Twilio, Google Calender API, Google Translator, playsound, prettytable, PyAudio, requests, SpeechRecognition, android, HTML, geopy, opencage, pyauthorize, spacy, smtp, FastAPI
 
 ## made with 💕 by:
 - [Ankit Hans](https://github.com/ankithans)
