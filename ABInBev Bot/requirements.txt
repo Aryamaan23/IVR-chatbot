@@ -100,7 +100,7 @@ pyTelegramBotAPI==3.7.7
 python-crfsuite==0.9.7
 python-dateutil==2.8.1
 python-engineio==4.1.0
-python-socketio==5.2.1
+python-socketio==5.14.0
 pytz==2020.5
 PyXB==1.2.5
 questionary==1.9.0
