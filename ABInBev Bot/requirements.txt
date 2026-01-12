@@ -1,7 +1,7 @@
 absl-py==0.12.0
 aio-pika==6.8.0
 aiofiles==0.6.0
-aiohttp==3.6.3
+aiohttp==3.13.3
 aiormq==3.3.1
 APScheduler==3.7.0
 astunparse==1.6.3
@@ -151,11 +151,11 @@ typing-extensions==3.10.0.0
 tzlocal==2.1
 ujson==4.0.2
 uritemplate==3.0.1
-urllib3==1.26.4
+urllib3==2.6.3
 wcwidth==0.2.5
 webexteamssdk==1.6
 websockets==8.1
-Werkzeug==1.0.1
+Werkzeug==3.1.5
 wincertstore==0.2
 wrapt==1.12.1
 yarl==1.5.1
